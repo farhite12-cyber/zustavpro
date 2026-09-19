@@ -1,0 +1,309 @@
+<title>Сборка сайта на Tilda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="brand.css">
+<style>
+.copy{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--steel);padding:16px 18px;margin:14px 0}
+.copy-label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);display:block;margin-bottom:12px}
+.copy h4{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(20px,3vw,27px);font-weight:600;line-height:1.08;margin:0 0 10px;letter-spacing:.005em;text-wrap:balance}
+.copy h5{font-family:var(--f-body);font-size:16px;font-weight:600;margin:0 0 6px}
+.copy p{margin:0 0 9px;max-width:58ch}
+.copy p:last-child{margin-bottom:0}
+.copy ul{margin:0 0 9px;padding-left:18px}
+.copy li{margin-bottom:4px}
+.btn{display:inline-block;font-weight:600;font-size:13.5px;border:1px solid var(--ink);padding:7px 14px;margin:8px 8px 0 0}
+.btn.primary{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.small{font-size:13px;color:var(--muted)}
+.fill{background:var(--brass-wash);color:var(--brass);border-bottom:1px dashed var(--brass);padding:0 4px;font-weight:600}
+.variants{margin:12px 0 0;padding-left:0;list-style:none}
+.variants li{margin-bottom:6px;padding-left:26px;position:relative;font-size:15px}
+.variants li::before{content:attr(data-v);position:absolute;left:0;font-family:var(--f-mono);font-size:11px;color:var(--brass);top:3px}
+.check{list-style:none;margin:20px 0 8px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.check li{background:var(--surface);padding:13px 15px;display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-size:14.5px}
+.check li::before{content:"";width:13px;height:13px;border:1.5px solid var(--line-strong);margin-top:4px}
+.blocknote{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);margin:0 0 4px;letter-spacing:.03em}
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="stamp">
+      <span>Документ 03 · сборка</span>
+      <span>Версия <b>0.1</b></span>
+      <span>19.09.2026</span>
+      <span>Платформа: <b>Tilda</b></span>
+    </div>
+    <h1>Сборка<span>на Tilda</span></h1>
+    <p class="deck">Что собирать, в каком порядке и какими словами. <strong>Готовые тексты — можно копировать в блоки как есть</strong>, подставив свои цифры.</p>
+  </header>
+
+  <div class="frame">
+    <nav class="rail" aria-label="Разделы документа">
+      <ol>
+        <li><a href="#decision">Смена решения</a></li>
+        <li><a href="#stock">Наличие без прайсов</a></li>
+        <li><a href="#pages">Карта страниц</a></li>
+        <li><a href="#texts">Тексты главной</a></li>
+        <li><a href="#services">Страницы услуг</a></li>
+        <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#tech">Техчасть</a></li>
+        <li><a href="#checklist">Чек-лист</a></li>
+        <li><a href="#need">Что нужно от вас</a></li>
+      </ol>
+    </nav>
+
+    <main>
+
+      <section id="decision">
+        <p class="eyebrow">01 · Пересмотр</p>
+        <h2>Tilda — теперь правильный выбор</h2>
+        <p class="lead">В документе 02 я советовал делать свой сайт. Главный аргумент был один: импорт партнёрских прайсов, который конструкторы не умеют. Вы ответили, что <strong>электронных прайсов нет вообще</strong> — наличие уточняется в чате или по звонку.</p>
+        <div class="thesis">
+          <p>Это снимает мой аргумент целиком. <em>Импортировать нечего — значит, конструктор не проигрывает ни в чём</em>, а выигрывает в том, что вы правите сайт сами, без меня и без разработчика.</p>
+          <p>Но у этого ответа есть второе следствие, важнее первого: <strong>полноценный интернет-магазин с тысячами позиций сейчас невозможен</strong> — никто не будет заводить их руками, а без фото и цен они всё равно мертвы. И это нормально: он вам и не нужен.</p>
+        </div>
+        <p style="margin-top:18px">Вместо магазина-склада строим <strong>кураторскую витрину на 30–100 позиций</strong>: то, что вы реально продаёте и готовы привезти за 1–3 дня. Остальной ассортимент партнёров работает через запрос, а не через каталог. Для вашего типа бизнеса это честнее и продаёт лучше — человек всё равно хочет спросить живого мастера.</p>
+        <div class="note">
+          <p><b>Одна просьба на будущее.</b> Попросите партнёров присылать прайс файлом Excel раз в неделю — хотя бы по ходовым группам. Это единственное, что потом откроет настоящий каталог на тысячи позиций и выгрузку на Авито. Отказать в этом обычно не отказывают, просто никто не просит.</p>
+        </div>
+      </section>
+
+      <section id="stock">
+        <p class="eyebrow">02 · Ключевой разворот</p>
+        <h2>Наличие без прайсов: продаём не склад, а скорость ответа</h2>
+        <p class="lead">Раз наличие подтверждается только звонком, сайт не должен обещать наличие вообще. Он должен обещать другое — и это работает даже лучше.</p>
+
+        <div class="stack">
+          <div class="layer">
+            <div><span class="layer-tag">Вместо</span><h3>«В наличии: 3 шт.»</h3></div>
+            <p>Обещание, которое вы физически не можете держать. Одна поездка клиента впустую — и рекомендация превращается в антирекламу.</p>
+          </div>
+          <div class="layer layer-core">
+            <div><span class="layer-tag">Ставим</span><h3>«Ответим за 15 минут»</h3></div>
+            <p>Напишите модель — уточним у партнёров, назовём цену и срок. Это обещание вы держите каждый день и так. Оно измеримо, его нельзя нарушить случайно, и оно бьёт маркетплейсы там, где они слабы: там не с кем поговорить.</p>
+          </div>
+        </div>
+
+        <p style="margin-top:22px">В каталоге остаются только два честных статуса:</p>
+        <ul>
+          <li><span class="state-tag" style="color:var(--ok);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;padding:2px 7px">В магазине</span> — лежит на полке, можно забрать сегодня. Ставится руками, снимается сразу после продажи.</li>
+          <li><span class="state-tag" style="color:var(--warn);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;padding:2px 7px">Под заказ 1–3 дня</span> — привозим от партнёров. Цена подтверждается при заказе.</li>
+        </ul>
+        <p>Третьего статуса нет. Слова «уточняйте» на сайте нет нигде — вместо него всегда кнопка.</p>
+      </section>
+
+      <section id="pages">
+        <p class="eyebrow">03 · Состав</p>
+        <h2>Что собираем в Tilda</h2>
+        <p class="lead">Шесть страниц. Больше на старте не нужно, меньше — не хватит.</p>
+        <ol class="screens" style="list-style:none;counter-reset:scr;margin:22px 0 8px;padding:0">
+          <li><b>Главная</b><span>Одностраничник: работает сама по себе, человек может никуда не уходить. Блоки — в разделе 04.</span></li>
+          <li><b>Ремонт телефонов</b><span>Отдельная страница: что чиним, цены «от», сроки, гарантия, форма.</span></li>
+          <li><b>Электроника и пайка</b><span>Ваше отличие от всех вокруг. Самая важная из трёх.</span></li>
+          <li><b>Часы: батарейки и ремешки</b><span>Короткая страница под быстрый запрос «где поменять батарейку».</span></li>
+          <li><b>Каталог</b><span>Tilda Store, 30–100 позиций, два статуса.</span></li>
+          <li><b>Контакты</b><span>Карта, ориентиры, часы, все способы связи, реквизиты.</span></li>
+        </ol>
+        <p class="note"><b>Технически в Tilda:</b> главную собирайте стандартными блоками, не Zero Block — так вы сами сможете её править с телефона. Zero Block оставьте только для первого экрана, если захочется нестандартной картинки.</p>
+      </section>
+
+      <section id="texts">
+        <p class="eyebrow">04 · Тексты</p>
+        <h2>Готовые тексты главной страницы</h2>
+        <p class="lead">Копируйте в блоки как есть. Всё, что подсвечено <span class="fill">так</span>, — подставьте своё. Пустые места лучше не оставлять: блок без цифры работает хуже, чем блок, которого нет.</p>
+
+        <p class="blocknote">Блок 1 · Обложка · Tilda CR или Zero Block</p>
+        <div class="copy">
+          <span class="copy-label">Первый экран</span>
+          <h4>Чиним то, за что не берутся другие</h4>
+          <p>Телефоны, планшеты, наушники, колонки, платы. Компонентный ремонт под микроскопом — меняем деталь, а не всю плату. Замена батарейки в часах — за 10 минут.</p>
+          <p class="small"><span class="fill">адрес</span> · ежедневно <span class="fill">часы работы</span> · <span class="fill">телефон</span></p>
+          <span class="btn primary">Написать в Telegram</span><span class="btn">Узнать цену ремонта</span>
+        </div>
+        <ul class="variants">
+          <li data-v="А">«Чиним то, за что не берутся другие» — бьёт в ваше главное отличие.</li>
+          <li data-v="Б">«Ремонт электроники и магазин техники на <span class="fill">улица</span>» — понятнее для случайного прохожего, слабее для рекомендаций.</li>
+          <li data-v="В">«Починим, а если чинить невыгодно — честно скажем» — сильнее всего работает на доверие, но требует, чтобы так и было.</li>
+        </ul>
+
+        <p class="blocknote" style="margin-top:30px">Блок 2 · Три колонки с иконками</p>
+        <div class="copy">
+          <span class="copy-label">Услуги и цены</span>
+          <h5>Ремонт телефонов — от <span class="fill">цена</span> ₽</h5>
+          <p>Экран, батарея, разъём зарядки, попала вода, не включается. Диагностика бесплатно, цену называем до начала работ. Большинство работ — в день обращения.</p>
+          <p class="small">Срок: <span class="fill">срок</span> · Гарантия: <span class="fill">N</span> мес.</p>
+          <h5 style="margin-top:16px">Электроника и пайка — от <span class="fill">цена</span> ₽</h5>
+          <p>Планшеты, наушники, колонки, усилители, платы. Компонентный ремонт: находим и меняем конкретный элемент вместо замены всего узла — это в разы дешевле.</p>
+          <p class="small">Срок: <span class="fill">срок</span> · Гарантия: <span class="fill">N</span> мес.</p>
+          <h5 style="margin-top:16px">Часы — от <span class="fill">цена</span> ₽</h5>
+          <p>Замена батарейки за 10 минут, с проверкой уплотнителя. Ремешки, застёжки, подгонка по руке.</p>
+          <p class="small">Без записи, при вас</p>
+        </div>
+
+        <p class="blocknote" style="margin-top:30px">Блок 3 · Призыв с кнопкой — самый важный блок для товара</p>
+        <div class="copy">
+          <span class="copy-label">Нет на полке — привезём</span>
+          <h4>Нужен товар? Спросите — привезём за 1–3 дня</h4>
+          <p>Зал у нас небольшой, а доступ большой: работаем со складами партнёров. Напишите модель — ответим за 15 минут: есть, сколько стоит и когда забрать. Ничего платить заранее не нужно.</p>
+          <span class="btn primary">Спросить про товар</span>
+        </div>
+
+        <p class="blocknote" style="margin-top:30px">Блок 4 · Tilda Store, плитка 8–12 карточек</p>
+        <div class="copy">
+          <span class="copy-label">Витрина</span>
+          <h4>Что есть прямо сейчас</h4>
+          <p>Цены в магазине, без наценки за доставку. Чего нет в списке — спросите, привезём.</p>
+          <span class="btn">Весь каталог</span>
+        </div>
+
+        <p class="blocknote" style="margin-top:30px">Блок 5 · Четыре колонки, только текст</p>
+        <div class="copy">
+          <span class="copy-label">Почему сюда</span>
+          <h4>Почему к нам возвращаются</h4>
+          <ul>
+            <li><strong>Диагностика бесплатно.</strong> Цену узнаёте до начала работ, а не после.</li>
+            <li><strong>Гарантия <span class="fill">N</span> месяцев</strong> письменно, с квитанцией.</li>
+            <li><strong>Компонентный ремонт.</strong> Там, где другие меняют плату целиком за <span class="fill">сумма</span> ₽, мы меняем один элемент.</li>
+            <li><strong>Работаем с <span class="fill">год</span> года.</strong> Большинство клиентов приходят по рекомендации знакомых.</li>
+          </ul>
+        </div>
+
+        <p class="blocknote" style="margin-top:30px">Блок 6 · Галерея или слайдер со скриншотами</p>
+        <div class="copy">
+          <span class="copy-label">Отзывы и работы</span>
+          <h4>Нас чаще находят по рекомендации</h4>
+          <p>Здесь — реальные переписки с клиентами и фото работ «до и после». Скриншоты из мессенджеров работают лучше любых отзывов на сайте: их видно, что они настоящие.</p>
+          <p class="small">Имена и номера на скриншотах замажьте — оставьте только текст.</p>
+        </div>
+
+        <p class="blocknote" style="margin-top:30px">Блок 7 · Карта Яндекса + текст</p>
+        <div class="copy">
+          <span class="copy-label">Как найти</span>
+          <h4>Как нас найти</h4>
+          <p><span class="fill">адрес полностью</span></p>
+          <p>Ориентир: <span class="fill">что рядом — магазин, остановка, вывеска</span>. Вход <span class="fill">со двора / с улицы</span>. Парковка <span class="fill">есть / у дома напротив</span>.</p>
+          <p class="small">Ежедневно <span class="fill">часы</span> · <span class="fill">телефон</span> · Telegram <span class="fill">@ник</span></p>
+        </div>
+
+        <p class="blocknote" style="margin-top:30px">Блок 8 · Форма, ровно два поля</p>
+        <div class="copy">
+          <span class="copy-label">Заявка</span>
+          <h4>Опишите проблему — отвечу лично</h4>
+          <p class="small">Поле 1: «Что случилось и какая модель»<br>Поле 2: «Телефон или Telegram»</p>
+          <span class="btn primary">Отправить</span>
+          <p class="small" style="margin-top:10px">Под кнопкой: «Отвечаю сам, в рабочее время обычно в течение 15 минут.»</p>
+        </div>
+        <p class="note"><b>Про поля.</b> Каждое лишнее поле в форме — минус заявки. Имя, почта, «удобное время звонка» не нужны: модель и контакт достаточны, остальное спросите в переписке.</p>
+      </section>
+
+      <section id="services">
+        <p class="eyebrow">05 · Услуги</p>
+        <h2>Три страницы услуг — по одному шаблону</h2>
+        <p class="lead">Структура одинаковая, меняется содержание. Каждая страница должна отвечать на четыре вопроса: возьмётесь ли, сколько, как долго, что если не получится.</p>
+        <ol class="screens" style="list-style:none;counter-reset:scr;margin:22px 0 8px;padding:0">
+          <li><b>Заголовок и подзаголовок</b><span>«Ремонт телефонов в <span class="fill">район</span>» + одна строка о том, что диагностика бесплатна.</span></li>
+          <li><b>Таблица работ и цен</b><span>8–15 строк: работа, цена «от», срок. Это главный блок страницы — ради него на неё и заходят.</span></li>
+          <li><b>Что входит в гарантию</b><span>Срок, на что распространяется, на что нет. Честно про воду и про вскрытые до вас аппараты.</span></li>
+          <li><b>Как проходит ремонт</b><span>Четыре шага: приняли с описанием → диагностика бесплатно → согласовали цену → сделали и отдали с квитанцией.</span></li>
+          <li><b>Блок циркуляции</b><span>На странице ремонта: «Пока чиним — подберём стекло, чехол, кабель к вашей модели». На странице часов: «Заодно подберём ремешок».</span></li>
+          <li><b>Та же форма заявки</b><span>Один и тот же блок на всех страницах.</span></li>
+        </ol>
+        <div class="copy">
+          <span class="copy-label">Пример: страница «Электроника и пайка», первый экран</span>
+          <h4>Компонентный ремонт электроники</h4>
+          <p>Планшеты, наушники, колонки, усилители, бытовая электроника. Работаем на уровне платы: находим сгоревший элемент и меняем его, а не отправляем вас за новым устройством.</p>
+          <p>Берёмся за то, от чего отказались в других сервисах. Диагностика бесплатная — если починить нельзя или невыгодно, скажем прямо и ничего не возьмём.</p>
+          <span class="btn primary">Описать проблему</span>
+        </div>
+      </section>
+
+      <section id="catalog">
+        <p class="eyebrow">06 · Каталог</p>
+        <h2>Правила, без которых каталог умрёт за месяц</h2>
+        <p class="lead">Каталог, который ведётся руками, живёт только при жёстких правилах. Один раз нарушив их, вы получите витрину с ценами прошлого года — хуже, чем никакой.</p>
+        <ul class="risks">
+          <li class="risk"><span class="sev crit">Правило</span><div><b>30 позиций минимум, 100 максимум</b>
+            <p class="fix">Меньше 30 — не выглядит магазином. Больше 100 — вы перестанете их обновлять. Берите только то, что продаётся регулярно.</p></div></li>
+          <li class="risk"><span class="sev crit">Правило</span><div><b>Нет фото или цены — позиции нет</b>
+            <p class="fix">Карточка «уточняйте» не продаёт, а показывает, что за сайтом не следят. Фото можно снять самому на столе на белом листе.</p></div></li>
+          <li class="risk"><span class="sev high">Правило</span><div><b>Один день в неделю — ревизия каталога</b>
+            <p class="fix">Полчаса: проверить цены, снять проданное, добавить новое. Поставьте напоминание, иначе это не случится никогда.</p></div></li>
+          <li class="risk"><span class="sev high">Правило</span><div><b>Продали с полки — статус меняется в тот же день</b>
+            <p class="fix">«В магазине» → «Под заказ 1–3 дня». Это одна минута и это то, ради чего вообще стоит ставить статусы.</p></div></li>
+          <li class="risk"><span class="sev mid">Правило</span><div><b>Аксессуары к тому, что вы чините</b>
+            <p class="fix">Стёкла, чехлы, кабели, ремешки к ходовым моделям. Это самая прибыльная часть каталога и прямая допродажа к ремонту.</p></div></li>
+        </ul>
+      </section>
+
+      <section id="tech">
+        <p class="eyebrow">07 · Техчасть</p>
+        <h2>Настройки, которые делаются один раз</h2>
+        <div class="stack">
+          <div class="layer">
+            <div><span class="layer-tag">Заявки</span><h3>Форма → Telegram</h3></div>
+            <p>В Tilda: «Сервисы» → Telegram, подключить бота, привязать ко всем формам сайта. Заявки приходят вам в чат за секунды. Дублируйте на почту — на случай, если бот отвалится.</p>
+          </div>
+          <div class="layer">
+            <div><span class="layer-tag">Домен</span><h3>Своё имя вместо адреса Tilda</h3></div>
+            <p>Регистрируйте домен на себя, а не на подрядчика — это единственная вещь, потеря которой необратима. Короткий, читаемый вслух по телефону.</p>
+          </div>
+          <div class="layer">
+            <div><span class="layer-tag">Карты</span><h3>Яндекс Карты и 2ГИС</h3></div>
+            <p>Карточка организации с теми же часами, телефоном и ссылкой на сайт. Для услуг это канал сильнее рекламы: люди ищут «ремонт телефонов рядом». Заполните все услуги списком — по ним вас и найдут.</p>
+          </div>
+          <div class="layer">
+            <div><span class="layer-tag">Поиск</span><h3>Заголовки страниц</h3></div>
+            <p>Шаблон: «Ремонт телефонов в <span class="fill">город/район</span> — <span class="fill">название</span>». В описании — цена «от» и срок. Больше на старте не нужно: seo для локального сервиса делают карты и отзывы, а не тексты.</p>
+          </div>
+          <div class="layer">
+            <div><span class="layer-tag">Отзывы</span><h3>Просить сразу при выдаче</h3></div>
+            <p>QR-код на стойке со ссылкой на отзыв в Картах. Просить в момент, когда человек доволен и держит починенный аппарат в руках, — единственный момент, когда отзывы реально пишут.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="checklist">
+        <p class="eyebrow">08 · Запуск</p>
+        <h2>Чек-лист первого этапа</h2>
+        <p class="lead">Порядок можно менять, но пункты — нет. Реальный срок при работе по вечерам — две-три недели.</p>
+        <ul class="check">
+          <li><span>Собрать прайс услуг: три группы, цены «от», сроки, гарантия</span></li>
+          <li><span>Снять 15–20 фото: витрина, рабочее место, работы «до/после»</span></li>
+          <li><span>Собрать 5–10 скриншотов отзывов из переписок, замазать личные данные</span></li>
+          <li><span>Зарегистрировать домен на себя</span></li>
+          <li><span>Завести аккаунт Tilda, выбрать шаблон одностраничника</span></li>
+          <li><span>Собрать главную по восьми блокам из раздела 04</span></li>
+          <li><span>Сделать три страницы услуг по шаблону из раздела 05</span></li>
+          <li><span>Завести 30 позиций каталога с фото, ценой и статусом</span></li>
+          <li><span>Подключить формы к Telegram и продублировать на почту</span></li>
+          <li><span>Проверить сайт с телефона: 8 из 10 зайдут именно так</span></li>
+          <li><span>Обновить карточки в Яндекс Картах и 2ГИС, добавить ссылку на сайт</span></li>
+          <li><span>Разослать ссылку постоянным клиентам — это первый и самый тёплый трафик</span></li>
+        </ul>
+        <p class="note"><b>Последний пункт — не формальность.</b> У вас уже есть база людей, которые вам доверяют. Первое сообщение с ссылкой этим людям даст больше заявок, чем первые три месяца поиска. И сразу покажет, что на сайте непонятно.</p>
+      </section>
+
+      <section id="need">
+        <p class="eyebrow">09 · Следующий шаг</p>
+        <h2>Что прислать, чтобы я дописал тексты до конца</h2>
+        <p class="lead">Сейчас в текстах подсвечены места под ваши данные. Пришлите их — верну полностью готовые тексты, без единого пропуска, вместе с таблицами цен для страниц услуг.</p>
+        <ol class="asks">
+          <li><b>Прайс услуг.</b> По каждой из трёх групп: работы, цена «от», срок, гарантия. Можно списком в чат, можно фото вашего прайса со стены.</li>
+          <li><b>Адрес и ориентиры.</b> Полный адрес, часы работы, где вход, что рядом.</li>
+          <li><b>Контакты.</b> Телефон, Telegram, WhatsApp — что из этого вы реально читаете.</li>
+          <li><b>С какого года работаете</b> и есть ли цифры вроде «отремонтировано более N устройств».</li>
+          <li><b>Что чаще всего спрашивают</b> из товара — из этого соберём первые 30 позиций каталога.</li>
+        </ol>
+      </section>
+
+      <footer>
+        <span>Зустов Про</span>
+        <span>Документ 03 · сборка · <b>v0.1</b></span>
+        <span>19.09.2026</span>
+        <span>Следующий шаг: <b>прайс услуг и контакты</b></span>
+      </footer>
+
+    </main>
+  </div>
+</div>

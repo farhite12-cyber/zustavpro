@@ -1,0 +1,153 @@
+/* Вариант В — «Личный мастер». Ставка на доверие и сарафанное радио.
+   Тёплый графит, глубокая зелень, PT Serif + Manrope. Речь от первого лица. */
+
+:root{
+  --bg:#EFEEEB;
+  --surface:#FFFFFF;
+  --surface-2:#E3E2DD;
+  --ink:#1A1A18;
+  --ink-2:#474742;
+  --muted:#75746D;
+  --line:#D6D5CF;
+  --line-2:#B4B3AB;
+  --green:#245943;
+  --green-hi:#2E7154;
+  --on-green:#F6F5F2;
+  --on-green-soft:rgba(246,245,242,.86);
+  --green-soft:#DEE8E2;
+  --ok:#245943;
+  --warn:#8A5A06;
+  --f-head:"PT Serif",Georgia,"Times New Roman",serif;
+  --f-body:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --wrap:1120px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#161614; --surface:#1E1E1B; --surface-2:#262622;
+    --ink:#EFEDE7; --ink-2:#C2C0B8; --muted:#8E8C84;
+    --line:#2C2C28; --line-2:#413F3A;
+    --green:#7FB49A; --green-hi:#96C6AE; --on-green:#14201A; --on-green-soft:rgba(20,32,26,.80); --green-soft:#1C2A24;
+    --ok:#7FB49A; --warn:#D3A44A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161614; --surface:#1E1E1B; --surface-2:#262622;
+  --ink:#EFEDE7; --ink-2:#C2C0B8; --muted:#8E8C84;
+  --line:#2C2C28; --line-2:#413F3A;
+  --green:#7FB49A; --green-hi:#96C6AE; --on-green:#14201A; --on-green-soft:rgba(20,32,26,.80); --green-soft:#1C2A24;
+  --ok:#7FB49A; --warn:#D3A44A;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+h1,h2,h3{margin:0;font-family:var(--f-head);font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(30px,5.2vw,50px);line-height:1.12}
+h2{font-size:clamp(23px,3.2vw,34px);line-height:1.18}
+h3{font-size:19px}
+p{margin:0}
+.lead{font-size:clamp(16.5px,1.8vw,19px);color:var(--ink-2);max-width:58ch;line-height:1.6}
+.label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:700}
+.ph{background:var(--green-soft);color:var(--green);border-bottom:1px dashed currentColor;padding:0 4px;font-weight:600;white-space:nowrap}
+
+.draft{background:var(--green);color:var(--on-green);font-size:13px;font-weight:600;text-align:center;padding:7px 16px}
+
+.top{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.top-in{display:flex;align-items:center;gap:18px;min-height:66px}
+.logo{font-family:var(--f-head);font-weight:700;font-size:20px;text-decoration:none;letter-spacing:-.01em}
+.logo i{font-style:italic;color:var(--green)}
+.nav{display:none;gap:22px;margin-left:auto}
+.nav a{font-size:15px;font-weight:500;text-decoration:none;color:var(--ink-2)}
+.nav a:hover{color:var(--green)}
+.top-cta{margin-left:auto;display:flex;gap:10px;align-items:center}
+.top-phone{display:none;font-weight:600;font-size:16px;text-decoration:none}
+@media (min-width:920px){.nav{display:flex}.top-cta{margin-left:22px}.top-phone{display:inline}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-size:15px;font-weight:600;
+  padding:12px 22px;border:1.5px solid var(--green);background:transparent;color:var(--green);
+  text-decoration:none;cursor:pointer;border-radius:999px;line-height:1.2}
+.btn:hover{background:var(--green);color:var(--on-green)}
+.btn-fill{background:var(--green);color:var(--on-green)}
+.btn-fill:hover{background:var(--green-hi);border-color:var(--green-hi)}
+.btn-sm{padding:9px 16px;font-size:14px}
+
+/* первый экран: человек и его слова */
+.hero{padding-block:clamp(32px,5vw,62px)}
+.hero-grid{display:grid;gap:30px}
+@media (min-width:940px){.hero-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:52px;align-items:center}}
+.portrait{aspect-ratio:4/5;max-width:100%;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px;padding:24px}
+.hero h1{margin-top:12px}
+.hero .lead{margin-top:18px}
+.hero-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero-meta{margin-top:20px;font-size:14.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 18px}
+
+.pull{border-left:3px solid var(--green);padding:4px 0 4px 18px;margin-top:24px;font-family:var(--f-head);font-size:19px;line-height:1.45;color:var(--ink)}
+.pull cite{display:block;font-family:var(--f-body);font-style:normal;font-size:14px;color:var(--muted);margin-top:8px}
+
+section{padding-block:clamp(36px,5vw,64px)}
+.sec-head{margin-bottom:26px;max-width:60ch}
+.sec-head .lead{margin-top:12px}
+
+/* услуги списком, без карточек */
+.svc-list{border-top:1px solid var(--line)}
+.svc-row{display:grid;grid-template-columns:1fr;gap:6px 24px;padding-block:22px;border-bottom:1px solid var(--line)}
+@media (min-width:820px){.svc-row{grid-template-columns:minmax(0,1fr) 150px 190px;align-items:baseline}}
+.svc-row h3{font-size:21px}
+.svc-row p{font-size:15.5px;color:var(--ink-2);grid-column:1;max-width:52ch}
+.svc-row .sum{font-family:var(--f-head);font-size:25px;font-weight:700;color:var(--green);white-space:nowrap}
+.svc-row .go{font-size:15px;font-weight:600;color:var(--green);text-decoration:none;border-bottom:1.5px solid currentColor;justify-self:start}
+.svc-row .meta{font-size:14px;color:var(--muted)}
+
+/* доверие */
+.trust{background:var(--surface);border-block:1px solid var(--line)}
+.trust-grid{display:grid;gap:26px}
+@media (min-width:860px){.trust-grid{grid-template-columns:repeat(3,1fr);gap:36px}}
+.trust-grid h3{color:var(--green);margin-bottom:6px}
+.trust-grid p{font-size:15.5px;color:var(--ink-2)}
+
+/* отзывы крупно */
+.revs{display:grid;gap:20px}
+@media (min-width:860px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{background:var(--surface);border:1px solid var(--line);padding:22px}
+.rev p{font-family:var(--f-head);font-size:17px;line-height:1.5;color:var(--ink)}
+.rev cite{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:12px}
+
+/* товар */
+.goods{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.good{background:var(--surface);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px}
+.good-img{aspect-ratio:4/3;max-width:100%;background:var(--surface-2);display:grid;place-items:center;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.good h3{font-family:var(--f-body);font-size:15.5px;font-weight:600;line-height:1.3}
+.good-price{font-family:var(--f-head);font-size:19px;font-weight:700}
+.status{font-size:12px;font-weight:600;padding:3px 9px;align-self:flex-start;border-radius:999px;border:1px solid currentColor}
+.status.in{color:var(--ok)}
+.status.order{color:var(--warn)}
+
+/* обращение */
+.write{background:var(--green);color:var(--on-green);padding-block:clamp(36px,5vw,58px)}
+.write h2{color:var(--on-green);max-width:18ch}
+.write p{color:var(--on-green-soft);max-width:54ch;margin-top:14px;font-size:17px}
+.write .btn{border-color:var(--on-green);color:var(--on-green)}
+.write .btn:hover{background:var(--on-green);color:var(--green)}
+.write .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+
+/* контакты */
+.contact{display:grid;gap:26px}
+@media (min-width:900px){.contact{grid-template-columns:1fr 1fr;gap:44px}}
+.crow{display:grid;grid-template-columns:118px 1fr;gap:12px;font-size:15.5px;border-bottom:1px solid var(--line);padding-block:12px;margin:0}
+.crow dt{color:var(--muted);font-size:14px}
+.crow dd{margin:0;font-weight:600}
+.map{aspect-ratio:4/3;max-width:100%;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px;padding:20px}
+
+footer{border-top:1px solid var(--line);padding-block:28px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.dock a{background:var(--surface);color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:14px 10px;text-align:center}
+.dock a.main{background:var(--green);color:var(--on-green)}
+@media (min-width:920px){.dock{display:none}}
+@media (max-width:919px){body{padding-bottom:54px}}

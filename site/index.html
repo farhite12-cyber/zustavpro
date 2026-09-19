@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зустов Про — ремонт телефонов, электроники и часов</title>
+<meta name="description" content="Ремонт телефонов, планшетов, наушников и колонок. Компонентная пайка. Замена батареек в часах за 10 минут. Диагностика бесплатно. Товар привезём за 1–3 дня.">
+<meta property="og:title" content="Зустов Про — ремонт телефонов, электроники и часов">
+<meta property="og:description" content="Ремонт телефонов, планшетов, наушников и колонок. Компонентная пайка. Замена батареек в часах за 10 минут. Диагностика бесплатно. Товар привезём за 1–3 дня.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="index.html">Зустов<i>Про</i></a>
+    <nav class="nav">
+      <a href="remont-telefonov.html">Телефоны</a>
+      <a href="elektronika.html">Электроника</a>
+      <a href="chasy.html">Часы</a>
+      <a href="katalog.html">Каталог</a>
+      <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="top-cta">
+      <a class="top-phone" href="#" data-href="phone" data-site="phone"></a>
+      <a class="btn btn-accent btn-sm" href="#" data-href="telegram">Написать</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Чиним то, за что <span>не берутся другие</span></h1>
+      <p class="lead">Телефоны, планшеты, наушники, колонки, платы. Компонентный ремонт под микроскопом — меняем сгоревшую деталь, а не весь узел. Замена батарейки в часах — за 10 минут.</p>
+      <div class="hero-acts">
+        <a class="btn btn-accent" href="#zayavka">Описать проблему</a>
+        <a class="btn" href="#uslugi">Цены на ремонт</a>
+      </div>
+      <div class="hero-meta">
+        <span><b data-site="address"></b></span>
+        <span data-site="hours"></span>
+        <span>Диагностика бесплатно</span>
+      </div>
+    </div>
+
+    <form class="picker" id="zayavka" onsubmit="return false">
+      <h3>Что случилось?</h3>
+      <p class="hint">Отметьте, добавьте модель — и отправьте одним сообщением. Отвечаю сам, обычно за 15 минут.</p>
+      <div class="chips" id="chips"></div>
+      <label class="field"><span>Устройство и модель</span>
+        <input id="model" type="text" placeholder="например, iPhone 12 или JBL Charge 4" autocomplete="off">
+      </label>
+      <label class="field"><span>Подробности (необязательно)</span>
+        <textarea id="details" placeholder="Когда сломалось, что уже делали, ремонтировали ли раньше"></textarea>
+      </label>
+      <button class="btn btn-accent btn-wide" id="send" type="button">Отправить в Telegram</button>
+      <p class="note">Откроется Telegram с уже готовым текстом — останется нажать «отправить».</p>
+    </form>
+  </div>
+</section>
+
+<section id="uslugi">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Услуги</p>
+      <h2>Три направления, одна мастерская</h2>
+      <p class="lead">Диагностика бесплатная. Цену называем до начала работ — и она не меняется по ходу.</p>
+    </div>
+    <div class="svc" data-services></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-grid">
+    <div>
+      <p class="eyebrow" style="color:var(--accent-hi)">Товар</p>
+      <h2>Нужен товар? Спросите — привезём за 1–3 дня</h2>
+      <p class="lead">Зал у нас небольшой, а доступ большой: работаем со складами партнёров. Напишите модель — ответим за 15 минут: есть, сколько стоит и когда забрать. Платить заранее не нужно.</p>
+      <div class="hero-acts">
+        <a class="btn btn-accent" href="#" data-href="telegram">Спросить про товар</a>
+        <a class="btn" href="katalog.html">Смотреть каталог</a>
+      </div>
+    </div>
+    <div class="band-facts">
+      <div class="band-fact"><b>15 мин</b><span>средний срок ответа в рабочее время</span></div>
+      <div class="band-fact"><b>1–3 дня</b><span>доставка со склада партнёров</span></div>
+      <div class="band-fact"><b>0 ₽</b><span>за проверку наличия и консультацию</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Витрина</p>
+      <h2>Что есть прямо сейчас</h2>
+      <p class="lead">Цены магазинные, без наценки за доставку. Чего нет в списке — спросите, привезём.</p>
+    </div>
+    <div class="goods" data-catalog="8"></div>
+    <p style="margin-top:20px"><a class="btn" href="katalog.html">Весь каталог</a></p>
+  </div>
+</section>
+
+<section style="padding-block:0">
+  <div class="why">
+    <div><b>Диагностика бесплатно</b><p>Цену узнаёте до начала работ, а не после. Если чинить невыгодно — скажем прямо и ничего не возьмём.</p></div>
+    <div><b>Гарантия <span data-site="warrantyMonths"></span> мес.</b><p>Письменно, с квитанцией. На работу и на установленную деталь.</p></div>
+    <div><b>Компонентный ремонт</b><p>Там, где меняют плату целиком, мы находим и меняем один элемент. Выходит в разы дешевле.</p></div>
+    <div><b>С <span data-site="since"></span> года</b><p>Большинство клиентов приходят по рекомендации знакомых. Это и есть наша реклама.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Отзывы</p>
+      <h2>Нас чаще находят по рекомендации</h2>
+    </div>
+    <div class="revs" data-reviews></div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--line)">
+  <div class="wrap contact">
+    <div class="cbox">
+      <div class="sec-head" style="margin-bottom:6px">
+        <p class="eyebrow">Адрес</p>
+        <h2>Как нас найти</h2>
+      </div>
+      <dl class="crow"><dt>Адрес</dt><dd data-site="address"></dd></dl>
+      <dl class="crow"><dt>Ориентир</dt><dd data-site="landmark"></dd></dl>
+      <dl class="crow"><dt>Часы</dt><dd data-site="hours"></dd></dl>
+      <dl class="crow"><dt>Телефон</dt><dd><a href="#" data-href="phone" data-site="phone"></a></dd></dl>
+      <dl class="crow" style="border-bottom:0"><dt>Telegram</dt><dd><a href="#" data-href="telegram" data-site="telegram"></a></dd></dl>
+    </div>
+    <div class="map">Сюда вставляется карта Яндекса — конструктор карт даёт готовый код вставки</div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>Зустов Про</h4>
+        <p style="font-size:15px;color:var(--ink-2);max-width:42ch">Ремонт телефонов, электроники и часов. Товар со своего склада и складов партнёров — привезём то, чего нет на полке.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="remont-telefonov.html">Ремонт телефонов</a></li>
+          <li><a href="elektronika.html">Электроника и пайка</a></li>
+          <li><a href="chasy.html">Часы и батарейки</a></li>
+          <li><a href="katalog.html">Каталог товаров</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связь</h4>
+        <ul>
+          <li><a href="#" data-href="phone" data-site="phone"></a></li>
+          <li><a href="#" data-href="telegram" data-site="telegram"></a></li>
+          <li><span data-site="address" style="font-size:15px;color:var(--ink-2)"></span></li>
+          <li><span data-site="hours" style="font-size:15px;color:var(--ink-2)"></span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-small">Цены на сайте справочные и не являются публичной офертой. Точная стоимость ремонта — после бесплатной диагностики.</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Быстрая связь">
+  <a href="#" data-href="phone">Позвонить</a>
+  <a class="main" href="#" data-href="telegram">Написать в Telegram</a>
+</nav>
+
+<script src="data/content.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

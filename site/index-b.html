@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зустов Про — цены на ремонт телефонов и электроники</title>
+<meta name="description" content="Прайс на ремонт телефонов, электроники и часов. Диагностика бесплатно, ответ за 15 минут. Товар привезём за 1–3 дня.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style-b.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="index-b.html">Зустов<i>Про</i></a>
+    <nav class="nav">
+      <a href="#telefony">Телефоны</a>
+      <a href="#elektronika">Электроника</a>
+      <a href="#chasy">Часы</a>
+      <a href="#tovar">Товар</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="top-cta">
+      <a class="top-phone" href="#" data-href="phone" data-site="phone"></a>
+      <a class="btn btn-mark btn-sm" href="#" data-href="telegram">Написать</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="head">
+  <div class="wrap head-grid">
+    <div>
+      <p class="label">Ремонт и запчасти · <span data-site="city"></span></p>
+      <h1 style="margin-top:12px">Цены на ремонт — <span class="mark">сразу на первом экране</span></h1>
+      <p class="lead">Ниже полный прайс по трём направлениям. Диагностика бесплатная, точная цена — до начала работ. Если вашей работы в списке нет, спросите: ответим за <b>15 минут</b>.</p>
+    </div>
+    <div class="searchbox">
+      <label for="q">Поиск по прайсу</label>
+      <input id="q" type="search" placeholder="экран, батарея, залитие, батарейка…" autocomplete="off">
+      <div class="row">
+        <a class="btn btn-mark" href="#" data-href="telegram">Спросить цену</a>
+        <a class="btn" href="#" data-href="phone">Позвонить</a>
+      </div>
+      <p>Начните печатать — прайс отфильтруется. Ничего не нашли — напишите, посчитаем по вашей модели.</p>
+    </div>
+  </div>
+</section>
+
+<div class="facts wrap" style="border:0;border-bottom:1.5px solid var(--line-2)">
+  <div><b>0 ₽</b><span>диагностика</span></div>
+  <div><b>15 мин</b><span>ответ в рабочее время</span></div>
+  <div><b><span data-site="warrantyMonths"></span> мес.</b><span>гарантия письменно</span></div>
+  <div><b>1–3 дня</b><span>привоз товара со склада партнёров</span></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Прайс</h2>
+      <span class="label">цены «от», рубли</span>
+    </div>
+    <div class="pricegrid">
+      <div id="telefony">
+        <h3>Телефоны</h3>
+        <div data-price="phones"></div>
+        <p style="margin-top:12px"><a class="btn btn-sm" href="remont-telefonov.html">Подробно</a></p>
+      </div>
+      <div id="elektronika">
+        <h3>Электроника и пайка</h3>
+        <div data-price="electronics"></div>
+        <p style="margin-top:12px"><a class="btn btn-sm" href="elektronika.html">Подробно</a></p>
+      </div>
+      <div id="chasy">
+        <h3>Часы</h3>
+        <div data-price="watches"></div>
+        <p style="margin-top:12px"><a class="btn btn-sm" href="chasy.html">Подробно</a></p>
+      </div>
+    </div>
+    <p id="noresult" hidden class="lead" style="margin-top:20px">По запросу ничего не нашлось. <a href="#" data-href="telegram" style="border-bottom:2px solid var(--mark);text-decoration:none">Напишите нам</a> — посчитаем по вашей модели.</p>
+    <p style="margin-top:22px;font-size:14px;color:var(--muted);max-width:66ch">Цена зависит от модели и от того, оригинальная деталь или совместимая — разницу объясним и дадим выбрать. Цены справочные, не оферта.</p>
+  </div>
+</section>
+
+<section id="tovar" style="border-block:1.5px solid var(--line-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Товар в магазине и под заказ</h2>
+      <a href="katalog.html">Весь каталог →</a>
+    </div>
+    <p class="lead" style="margin-bottom:20px">Зал небольшой, доступ большой: работаем со складами партнёров. Нет в списке — <span class="mark">напишите модель, привезём за 1–3 дня</span>.</p>
+    <div class="goods" data-catalog="8"></div>
+  </div>
+</section>
+
+<section style="padding-block:0">
+  <div class="revs" data-reviews></div>
+</section>
+
+<section id="kontakty">
+  <div class="wrap contact">
+    <div>
+      <h2 style="margin-bottom:14px">Как нас найти</h2>
+      <dl class="crow"><dt>Адрес</dt><dd data-site="address"></dd></dl>
+      <dl class="crow"><dt>Ориентир</dt><dd data-site="landmark"></dd></dl>
+      <dl class="crow"><dt>Часы</dt><dd data-site="hours"></dd></dl>
+      <dl class="crow"><dt>Телефон</dt><dd><a href="#" data-href="phone" data-site="phone" style="text-decoration:none;border-bottom:2px solid var(--mark)"></a></dd></dl>
+      <dl class="crow" style="border-bottom:0"><dt>Telegram</dt><dd><a href="#" data-href="telegram" data-site="telegram" style="text-decoration:none;border-bottom:2px solid var(--mark)"></a></dd></dl>
+    </div>
+    <div class="map">Сюда вставляется карта Яндекса</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Зустов Про · <span data-site="address"></span></span>
+    <span>Цены справочные и не являются публичной офертой</span>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Быстрая связь">
+  <a href="#" data-href="phone">Позвонить</a>
+  <a class="main" href="#" data-href="telegram">Написать</a>
+</nav>
+
+<script src="data/content.js"></script>
+<script src="assets/app.js"></script>
+<script>
+/* Фильтр прайса: скрывает строки и целые блоки, которые не совпали. */
+(function () {
+  var q = document.getElementById("q");
+  if (!q) return;
+  var blocks = Array.prototype.slice.call(document.querySelectorAll(".pricegrid > div"));
+  var none = document.getElementById("noresult");
+  q.addEventListener("input", function () {
+    var v = q.value.trim().toLowerCase();
+    var anyShown = false;
+    blocks.forEach(function (b) {
+      var rows = b.querySelectorAll("tbody tr");
+      var shown = 0;
+      rows.forEach(function (r) {
+        var hit = !v || r.textContent.toLowerCase().indexOf(v) > -1;
+        r.hidden = !hit;
+        if (hit) shown++;
+      });
+      b.hidden = shown === 0;
+      if (shown) anyShown = true;
+    });
+    if (none) none.hidden = anyShown;
+  });
+})();
+</script>
+</body>
+</html>
