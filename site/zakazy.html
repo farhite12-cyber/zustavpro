@@ -108,6 +108,8 @@
 
 <script src="data/shop.js"></script>
 <script src="assets/shop.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="data/config.js"></script>
 <script src="assets/store.js"></script>
 <script src="assets/cart.js"></script>
 
@@ -134,10 +136,15 @@
       '<span style="font-size:14px;color:var(--muted)">' + (o.delivery==="delivery" ? "Доставка" : "Самовывоз, П72–П73") + '</span></div>' +
       '</article>';
   }
-  var all = S.listOrders();
-  document.getElementById("list").innerHTML = all.length ? all.map(row).join("") :
-    '<div class="empty"><h2>Заказов пока нет</h2><p>Соберите корзину — заказ появится здесь вместе со статусом.</p>' +
-    '<a class="btn btn-green" href="katalog.html">В каталог</a></div>';
+  var host = document.getElementById("list");
+  host.innerHTML = '<p style="color:var(--muted)">Загружаем…</p>';
+  (S.mode === "supabase" ? S.myOrders() : S.listOrders()).then(function(all){
+    host.innerHTML = all.length ? all.map(row).join("") :
+      '<div class="empty"><h2>Заказов пока нет</h2><p>Соберите корзину — заказ появится здесь вместе со статусом.</p>' +
+      '<a class="btn btn-green" href="katalog.html">В каталог</a></div>';
+  }).catch(function(){
+    host.innerHTML = '<div class="empty"><h2>Не удалось загрузить</h2><p>Проверьте связь и обновите страницу.</p></div>';
+  });
 })();
 </script>
 </body>

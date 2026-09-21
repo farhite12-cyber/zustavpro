@@ -109,6 +109,8 @@
 
 <script src="data/shop.js"></script>
 <script src="assets/shop.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="data/config.js"></script>
 <script src="assets/store.js"></script>
 <script src="assets/cart.js"></script>
 
@@ -177,14 +179,16 @@
       var client = { name: document.getElementById("f_name").value.trim(),
                      phone: document.getElementById("f_phone").value.trim() };
       S.me(client);
-      var order = S.createOrder({
+      var btn = document.querySelector("#co button[type=submit]");
+      btn.disabled = true; btn.textContent = "Отправляем…";
+      S.createOrder({
         client: client,
         delivery: picked,
         address: picked==="delivery" ? document.getElementById("f_addr").value.trim() : "",
         comment: document.getElementById("f_note").value.trim(),
         items: S.getCart(),
         total: total
-      });
+      }).then(function(order){
       var txt = "Заказ " + order.id + "\n" +
         order.items.map(function(i){ return "• " + i.title + " × " + i.qty + " — " + i.price + " ₽ (арт. " + i.art + ")"; }).join("\n") +
         "\nИтого: " + money(order.total) + " ₽" +
@@ -195,6 +199,11 @@
       S.setCart([]);
       if(tg) window.open(tg + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
       location.href = "zakazy.html?new=" + encodeURIComponent(order.id);
+      }).catch(function(err){
+        btn.disabled = false; btn.textContent = "Оформить заказ";
+        alert("Не получилось отправить заказ: " + (err.message || err) +
+              "\nПозвоните нам или напишите в Telegram — оформим вручную.");
+      });
     };
   }
   draw();
