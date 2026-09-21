@@ -79,10 +79,10 @@ p{margin:0}
   letter-spacing:-.02em;line-height:1;white-space:nowrap;color:inherit;
 }
 .logo .z{color:inherit}
-.logo .p{position:relative;padding-right:.55em;color:inherit}
+.logo .p{position:relative;padding:0 .36em;margin-right:.18em;color:inherit}
 .logo .p::before{
-  content:"";position:absolute;right:-.24em;top:50%;transform:translateY(-50%);
-  width:1.62em;height:1.62em;border:.13em solid var(--green);border-radius:50%;pointer-events:none;
+  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:2.05em;height:2.05em;border:.135em solid var(--green);border-radius:50%;pointer-events:none;
 }
 .logo-sub{
   display:none;margin-left:14px;font-family:var(--f-display);font-size:14px;
@@ -150,14 +150,14 @@ p{margin:0}
 }
 .hero-main::after{
   content:"";position:absolute;right:-118px;top:-104px;width:308px;height:308px;
-  border:26px solid var(--green);border-radius:50%;opacity:.9;pointer-events:none;
+  border:26px solid var(--green);border-radius:50%;opacity:.85;pointer-events:none;z-index:0;
 }
 @media (max-width:899px){.hero-main::after{width:200px;height:200px;border-width:18px;right:-70px;top:-70px}}
-.hero-main h1{position:relative;max-width:15ch}
+.hero-main h1{position:relative;z-index:1;max-width:15ch}
 .hero-main h1 i{font-style:normal;color:var(--orange-2)}
-.hero-main p{position:relative;margin-top:14px;max-width:44ch;color:#E3D2E5;font-size:clamp(15px,1.7vw,17.5px)}
-.hero-acts{position:relative;display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.hero-tag{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+.hero-main p{position:relative;z-index:1;margin-top:14px;max-width:44ch;color:#E3D2E5;font-size:clamp(15px,1.7vw,17.5px)}
+.hero-acts{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero-tag{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
   background:rgba(255,255,255,.14);padding:6px 12px;border-radius:99px;margin-bottom:16px;width:fit-content}
 .promo{
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;
