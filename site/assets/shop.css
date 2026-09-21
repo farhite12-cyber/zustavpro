@@ -1,0 +1,280 @@
+/* Zustav PRO — фирменный стиль магазина.
+   Цвета сняты с логотипа: #470A4A фиолетовый, #4C8C06 зелёный, #C2611C оранжевый. */
+
+:root{
+  --brand:#470A4A;          /* фиолетовый как поверхность: шапка, подвал, плашки */
+  --brand-2:#5C1460;
+  --brand-deep:#320635;
+  --on-brand:#FFFFFF;
+  --brand-ink:#470A4A;      /* фиолетовый как текст на светлом */
+  --green:#4C8C06;
+  --green-2:#5DA30D;
+  --green-soft:#EAF3DF;
+  --on-green:#FFFFFF;
+  --orange:#C2611C;
+  --orange-2:#DA7325;
+  --orange-soft:#FBEDE1;
+
+  --bg:#F7F5F8;
+  --surface:#FFFFFF;
+  --surface-2:#F0ECF1;
+  --ink:#231A26;
+  --ink-2:#4E4552;
+  --muted:#776D7C;
+  --line:#E6DFE8;
+  --line-2:#CFC4D2;
+
+  --f-display:"Jost","Onest","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Onest","Helvetica Neue",Arial,sans-serif;
+  --wrap:1280px;
+  --r:10px;
+  --shadow:0 1px 2px rgba(35,26,38,.05), 0 10px 26px -18px rgba(35,26,38,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --brand:#3E0942; --brand-2:#551358; --brand-deep:#2A052C;
+    --brand-ink:#C793CC;
+    --green:#74BC2A; --green-2:#86CE3C; --green-soft:#1B2A11; --on-green:#10180A;
+    --orange:#E08A44; --orange-2:#EE9A55; --orange-soft:#2C1D10;
+    --bg:#141017; --surface:#1D1622; --surface-2:#261D2B;
+    --ink:#EEE8F0; --ink-2:#C4BAC8; --muted:#8E8394;
+    --line:#2D2333; --line-2:#413349;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 30px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --brand:#3E0942; --brand-2:#551358; --brand-deep:#2A052C;
+  --brand-ink:#C793CC;
+  --green:#74BC2A; --green-2:#86CE3C; --green-soft:#1B2A11; --on-green:#10180A;
+  --orange:#E08A44; --orange-2:#EE9A55; --orange-soft:#2C1D10;
+  --bg:#141017; --surface:#1D1622; --surface-2:#261D2B;
+  --ink:#EEE8F0; --ink-2:#C4BAC8; --muted:#8E8394;
+  --line:#2D2333; --line-2:#413349;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 30px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:16px}
+h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:600;letter-spacing:-.015em;text-wrap:balance}
+h1{font-size:clamp(28px,4.4vw,46px);line-height:1.06}
+h2{font-size:clamp(21px,2.8vw,31px);line-height:1.12}
+h3{font-size:17px;font-weight:600}
+p{margin:0}
+.ph{background:var(--orange-soft);color:var(--orange);border-bottom:1px dashed currentColor;padding:0 4px;font-weight:600;white-space:nowrap}
+.draft{background:var(--orange);color:#fff;font-size:13px;font-weight:600;text-align:center;padding:7px 16px}
+
+/* ---------- логотип ----------
+   Кольцо рисуется на ::before в em, поэтому масштабируется вместе с текстом
+   и не зависит от метрик шрифта. */
+.logo{
+  display:inline-flex;align-items:center;flex:0 0 auto;
+  font-family:var(--f-display);font-weight:500;font-size:25px;
+  letter-spacing:-.02em;line-height:1;white-space:nowrap;color:inherit;
+}
+.logo .z{color:inherit}
+.logo .p{position:relative;padding-right:.55em;color:inherit}
+.logo .p::before{
+  content:"";position:absolute;right:-.24em;top:50%;transform:translateY(-50%);
+  width:1.62em;height:1.62em;border:.13em solid var(--green);border-radius:50%;pointer-events:none;
+}
+.logo-sub{
+  display:none;margin-left:14px;font-family:var(--f-display);font-size:14px;
+  font-weight:500;color:var(--orange-2);white-space:nowrap;
+}
+@media (min-width:1120px){.logo-sub{display:inline}}
+.logo-ink{color:var(--brand-ink)}
+@media (min-width:980px){.logo{font-size:28px}}
+
+/* ---------- верхняя полоса ---------- */
+.topbar{background:var(--brand-deep);color:#E8D8EA;font-size:13px}
+.topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;min-height:38px;padding-block:6px}
+.topbar a{color:#fff}
+.topbar a:hover{color:var(--orange-2)}
+.topbar .sep{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+.topbar b{color:#fff;font-weight:600}
+
+/* ---------- шапка ---------- */
+.header{background:var(--brand);color:var(--on-brand);position:sticky;top:0;z-index:40}
+.header .wrap{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding-block:12px}
+@media (min-width:980px){.header .wrap{grid-template-columns:auto 1fr auto;gap:22px}}
+.hd-search{position:relative;display:flex;min-width:0}
+.hd-search input{
+  width:100%;font:inherit;font-size:15px;padding:11px 44px 11px 14px;
+  border:0;border-radius:var(--r);background:#fff;color:var(--ink);
+}
+.hd-search input::placeholder{color:var(--muted)}
+.hd-search button{
+  position:absolute;right:4px;top:4px;bottom:4px;width:36px;border:0;border-radius:7px;
+  background:var(--green);color:var(--on-green);cursor:pointer;display:grid;place-items:center;
+}
+.hd-search button:hover{background:var(--green-2)}
+.hd-cta{display:none;gap:10px;align-items:center}
+@media (min-width:980px){.hd-cta{display:flex}}
+.hd-phone{font-family:var(--f-display);font-weight:600;font-size:17px;white-space:nowrap;color:#fff}
+.hd-phone span{display:block;font-family:var(--f-body);font-weight:400;font-size:11.5px;color:#D9C3DC}
+
+/* ---------- полоса категорий ---------- */
+.catbar{background:var(--surface);border-bottom:1px solid var(--line);position:relative;z-index:30}
+.catbar ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:thin}
+.catbar a{display:block;white-space:nowrap;padding:12px 13px;font-size:14.5px;color:var(--ink-2);border-bottom:2px solid transparent}
+.catbar a:hover{color:var(--brand-ink);border-bottom-color:var(--green)}
+
+/* ---------- кнопки ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;
+  padding:12px 20px;border:1.5px solid transparent;border-radius:var(--r);cursor:pointer;line-height:1.2;transition:background .15s,color .15s,border-color .15s}
+.btn-green{background:var(--green);color:var(--on-green);border-color:var(--green)}
+.btn-green:hover{background:var(--green-2);border-color:var(--green-2)}
+.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn-orange:hover{background:var(--orange-2);border-color:var(--orange-2)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--brand-ink);color:var(--brand-ink)}
+.btn-white{background:#fff;color:var(--brand);border-color:#fff}
+.btn-white:hover{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn-sm{padding:9px 14px;font-size:14px}
+.btn-wide{width:100%}
+
+/* ---------- герой ---------- */
+.hero{padding-block:20px 8px}
+.hero-grid{display:grid;gap:12px}
+@media (min-width:900px){.hero-grid{grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);grid-template-rows:auto auto}}
+.hero-main{
+  background:var(--brand);color:#fff;border-radius:var(--r);padding:clamp(24px,4vw,44px);
+  position:relative;overflow:hidden;grid-row:span 2;display:flex;flex-direction:column;justify-content:center;
+}
+.hero-main::after{
+  content:"";position:absolute;right:-118px;top:-104px;width:308px;height:308px;
+  border:26px solid var(--green);border-radius:50%;opacity:.9;pointer-events:none;
+}
+@media (max-width:899px){.hero-main::after{width:200px;height:200px;border-width:18px;right:-70px;top:-70px}}
+.hero-main h1{position:relative;max-width:15ch}
+.hero-main h1 i{font-style:normal;color:var(--orange-2)}
+.hero-main p{position:relative;margin-top:14px;max-width:44ch;color:#E3D2E5;font-size:clamp(15px,1.7vw,17.5px)}
+.hero-acts{position:relative;display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero-tag{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+  background:rgba(255,255,255,.14);padding:6px 12px;border-radius:99px;margin-bottom:16px;width:fit-content}
+.promo{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;
+  display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.promo h3{font-size:19px;color:var(--brand-ink)}
+.promo p{font-size:14.5px;color:var(--ink-2);flex:1}
+.promo .go{font-weight:600;font-size:14.5px;color:var(--green);margin-top:4px}
+.promo .ico{position:absolute;right:14px;top:14px;color:var(--green);opacity:.25}
+.promo .ico svg{width:52px;height:52px}
+
+/* ---------- секции ---------- */
+section{padding-block:clamp(26px,3.6vw,44px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 18px;margin-bottom:18px}
+.sec-head .all{font-size:14.5px;font-weight:600;color:var(--green)}
+.sec-head .all:hover{color:var(--orange)}
+
+/* ---------- категории ---------- */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.cat{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 14px;
+  display:flex;flex-direction:column;gap:8px;transition:border-color .15s, transform .15s;
+}
+.cat:hover{border-color:var(--green);transform:translateY(-2px)}
+.cat .ico{color:var(--brand-ink)}
+.cat .ico svg{width:30px;height:30px}
+.cat b{font-family:var(--f-display);font-size:15.5px;font-weight:600;line-height:1.2}
+.cat span{font-size:12.5px;color:var(--muted);line-height:1.35}
+
+/* ---------- вкладки ---------- */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:16px;scrollbar-width:thin}
+.tab{white-space:nowrap;padding:8px 15px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer;font-size:14.5px}
+.tab:hover{border-color:var(--green);color:var(--green)}
+.tab[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+
+/* ---------- карточка товара ---------- */
+.goods{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.good{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:12px;display:flex;flex-direction:column;gap:8px;position:relative;transition:border-color .15s,box-shadow .15s;
+}
+.good:hover{border-color:var(--line-2);box-shadow:var(--shadow)}
+.good-img{aspect-ratio:1/1;max-width:100%;background:var(--surface-2);border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;overflow:hidden}
+.good-img img{width:100%;height:100%;object-fit:contain}
+.badge{position:absolute;left:12px;top:12px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;border-radius:6px;color:#fff;z-index:1}
+.badge.new{background:var(--green)}
+.badge.sale{background:var(--orange)}
+.badge.pick{background:var(--brand)}
+.good-brand{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.good h3{font-size:14.5px;font-weight:500;font-family:var(--f-body);letter-spacing:0;line-height:1.32;flex:1}
+.good-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.good-price b{font-family:var(--f-display);font-size:20px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.good-price s{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.good-price.sale b{color:var(--orange)}
+.stock{font-size:12.5px;font-weight:500;display:flex;align-items:center;gap:6px}
+.stock::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.stock.in{color:var(--green)}
+.stock.order{color:var(--orange)}
+.good-art{font-size:11.5px;color:var(--muted)}
+
+/* ---------- бренды ---------- */
+.brands{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.brands div{background:var(--surface);padding:18px 12px;text-align:center;font-family:var(--f-display);font-size:16px;font-weight:500;color:var(--ink-2);letter-spacing:.01em}
+.brands div:hover{color:var(--brand-ink);background:var(--surface-2)}
+
+/* ---------- услуги ---------- */
+.svc{display:grid;gap:12px}
+@media (min-width:880px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc-col{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.svc-col > h3{font-size:19px;color:var(--brand-ink);margin-bottom:4px}
+.svc-col > p{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+.svc-col ul{list-style:none;margin:0;padding:0}
+.svc-col li{display:flex;justify-content:space-between;gap:14px;padding-block:9px;border-bottom:1px dashed var(--line);font-size:14.5px}
+.svc-col li:last-child{border-bottom:0}
+.svc-col li b{font-weight:600;white-space:nowrap;color:var(--brand-ink);font-variant-numeric:tabular-nums}
+
+/* ---------- преимущества ---------- */
+.adv{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}
+.adv div{background:var(--green-soft);border-radius:var(--r);padding:18px}
+.adv b{display:block;font-family:var(--f-display);font-size:16.5px;font-weight:600;color:var(--brand-ink);margin-bottom:5px}
+.adv p{font-size:14px;color:var(--ink-2)}
+
+/* ---------- отзывы ---------- */
+.revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.rev .stars{color:var(--orange);font-size:14px;letter-spacing:2px;margin-bottom:8px}
+.rev p{font-size:14.5px;color:var(--ink-2)}
+.rev cite{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:10px}
+
+/* ---------- текст о магазине ---------- */
+.seo{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,32px)}
+.seo h2{margin-bottom:12px}
+.seo p{max-width:80ch;color:var(--ink-2);margin-bottom:10px;font-size:15px}
+.seo p:last-child{margin-bottom:0}
+
+/* ---------- контакты ---------- */
+.contact{display:grid;gap:18px}
+@media (min-width:900px){.contact{grid-template-columns:1fr 1fr;gap:32px}}
+.crow{display:grid;grid-template-columns:118px 1fr;gap:12px;padding-block:11px;border-bottom:1px solid var(--line);margin:0;font-size:15px}
+.crow dt{color:var(--muted);font-size:14px}
+.crow dd{margin:0;font-weight:600}
+.map{aspect-ratio:4/3;max-width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px;padding:20px}
+
+/* ---------- подвал ---------- */
+.footer{background:var(--brand-deep);color:#D9C6DC;margin-top:26px;padding-block:34px 26px}
+.footer .cols{display:grid;gap:24px}
+@media (min-width:820px){.footer .cols{grid-template-columns:1.6fr 1fr 1fr 1.2fr}}
+.footer h4{font-family:var(--f-display);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#A98FAD;margin:0 0 12px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14.5px}
+.footer a:hover{color:var(--orange-2)}
+.footer .logo svg{height:34px}
+.footer .small{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#9B8A9F;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* ---------- мобильная панель ---------- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.dock a{background:var(--surface);color:var(--ink);font-weight:600;font-size:13.5px;padding:11px 6px;text-align:center;display:grid;gap:3px;justify-items:center}
+.dock a svg{width:19px;height:19px}
+.dock a.main{background:var(--green);color:var(--on-green)}
+@media (min-width:980px){.dock{display:none}}
+@media (max-width:979px){body{padding-bottom:58px}}

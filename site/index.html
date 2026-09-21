@@ -1,185 +1,192 @@
 <!doctype html>
-<html lang="ru" prefix="og: https://ogp.me/ns#">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Зустов Про — ремонт телефонов, электроники и часов</title>
-<meta name="description" content="Ремонт телефонов, планшетов, наушников и колонок. Компонентная пайка. Замена батареек в часах за 10 минут. Диагностика бесплатно. Товар привезём за 1–3 дня.">
-<meta property="og:title" content="Зустов Про — ремонт телефонов, электроники и часов">
-<meta property="og:description" content="Ремонт телефонов, планшетов, наушников и колонок. Компонентная пайка. Замена батареек в часах за 10 минут. Диагностика бесплатно. Товар привезём за 1–3 дня.">
+<title>Zustav PRO — телефоны, ноутбуки, часы, наушники, ключи · м. Савёловская</title>
+<meta name="description" content="Магазин и сервис на Сущёвском Валу: телефоны, ноутбуки, часы, наушники, колонки, аксессуары Baseus, Anker, MOMAX, WIWU. Изготовление ключей и пультов, ремонт техники. Опт и розница.">
+<meta property="og:title" content="Zustav PRO — телефоны, ноутбуки, часы, наушники, ключи · м. Савёловская">
+<meta property="og:description" content="Магазин и сервис на Сущёвском Валу: телефоны, ноутбуки, часы, наушники, колонки, аксессуары Baseus, Anker, MOMAX, WIWU. Изготовление ключей и пультов, ремонт техники. Опт и розница.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Onest:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/shop.css">
 </head>
 <body>
-<header class="top">
-  <div class="wrap top-in">
-    <a class="logo" href="index.html">Зустов<i>Про</i></a>
-    <nav class="nav">
-      <a href="remont-telefonov.html">Телефоны</a>
-      <a href="elektronika.html">Электроника</a>
-      <a href="chasy.html">Часы</a>
-      <a href="katalog.html">Каталог</a>
-      <a href="kontakty.html">Контакты</a>
-    </nav>
-    <div class="top-cta">
-      <a class="top-phone" href="#" data-href="phone" data-site="phone"></a>
-      <a class="btn btn-accent btn-sm" href="#" data-href="telegram">Написать</a>
-    </div>
+
+<div class="topbar"><div class="wrap">
+  <span><span data-org="place"></span> · <span data-org="metro"></span></span>
+  <span class="sep">
+    <span data-org="hours"></span>
+    <a href="#" data-href="telegram">Telegram</a>
+    <a href="#" data-href="whatsapp">WhatsApp</a>
+    <b><a href="#" data-href="phone" data-org="phone1"></a></b>
+  </span>
+</div></div>
+
+<header class="header"><div class="wrap">
+  <div style="display:flex;align-items:center;min-width:0">
+    <a class="logo" href="index.html"><span class="z">Zustav</span><span class="p">Pro</span></a>
+    <span class="logo-sub">Тут есть Всё!</span>
   </div>
-</header>
+  <form class="hd-search" data-headsearch role="search">
+    <input type="search" name="q" placeholder="Поиск: телефон, наушники, ремешок, ключ…" aria-label="Поиск по каталогу">
+    <button type="submit" aria-label="Найти" data-ico="search"></button>
+  </form>
+  <div class="hd-cta">
+    <a class="hd-phone" href="#" data-href="phone"><span data-org="phone1"></span><span>ежедневно 10:00–20:00</span></a>
+    <a class="btn btn-green btn-sm" href="#" data-href="telegram">Написать</a>
+  </div>
+</div></header>
+
+<nav class="catbar" aria-label="Категории"><div class="wrap"><ul data-catbar></ul></div></nav>
 
 <main>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <h1>Чиним то, за что <span>не берутся другие</span></h1>
-      <p class="lead">Телефоны, планшеты, наушники, колонки, платы. Компонентный ремонт под микроскопом — меняем сгоревшую деталь, а не весь узел. Замена батарейки в часах — за 10 минут.</p>
-      <div class="hero-acts">
-        <a class="btn btn-accent" href="#zayavka">Описать проблему</a>
-        <a class="btn" href="#uslugi">Цены на ремонт</a>
-      </div>
-      <div class="hero-meta">
-        <span><b data-site="address"></b></span>
-        <span data-site="hours"></span>
-        <span>Диагностика бесплатно</span>
-      </div>
-    </div>
-
-    <form class="picker" id="zayavka" onsubmit="return false">
-      <h3>Что случилось?</h3>
-      <p class="hint">Отметьте, добавьте модель — и отправьте одним сообщением. Отвечаю сам, обычно за 15 минут.</p>
-      <div class="chips" id="chips"></div>
-      <label class="field"><span>Устройство и модель</span>
-        <input id="model" type="text" placeholder="например, iPhone 12 или JBL Charge 4" autocomplete="off">
-      </label>
-      <label class="field"><span>Подробности (необязательно)</span>
-        <textarea id="details" placeholder="Когда сломалось, что уже делали, ремонтировали ли раньше"></textarea>
-      </label>
-      <button class="btn btn-accent btn-wide" id="send" type="button">Отправить в Telegram</button>
-      <p class="note">Откроется Telegram с уже готовым текстом — останется нажать «отправить».</p>
-    </form>
-  </div>
-</section>
-
-<section id="uslugi">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Услуги</p>
-      <h2>Три направления, одна мастерская</h2>
-      <p class="lead">Диагностика бесплатная. Цену называем до начала работ — и она не меняется по ходу.</p>
-    </div>
-    <div class="svc" data-services></div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap band-grid">
-    <div>
-      <p class="eyebrow" style="color:var(--accent-hi)">Товар</p>
-      <h2>Нужен товар? Спросите — привезём за 1–3 дня</h2>
-      <p class="lead">Зал у нас небольшой, а доступ большой: работаем со складами партнёров. Напишите модель — ответим за 15 минут: есть, сколько стоит и когда забрать. Платить заранее не нужно.</p>
-      <div class="hero-acts">
-        <a class="btn btn-accent" href="#" data-href="telegram">Спросить про товар</a>
-        <a class="btn" href="katalog.html">Смотреть каталог</a>
-      </div>
-    </div>
-    <div class="band-facts">
-      <div class="band-fact"><b>15 мин</b><span>средний срок ответа в рабочее время</span></div>
-      <div class="band-fact"><b>1–3 дня</b><span>доставка со склада партнёров</span></div>
-      <div class="band-fact"><b>0 ₽</b><span>за проверку наличия и консультацию</span></div>
+<section class="hero"><div class="wrap hero-grid">
+  <div class="hero-main">
+    <span class="hero-tag"><span data-ico="pin" style="display:block;width:15px;height:15px"></span> ТЦ «Мобильный Павильон», П72–П73 · м. Савёловская</span>
+    <h1>Тут есть <i>Всё!</i></h1>
+    <p>Телефоны, ноутбуки, часы, наушники и колонки, умные гаджеты, аксессуары, батарейки, запчасти, стёкла и чехлы. Новая и Б/У техника, опт и розница.</p>
+    <div class="hero-acts">
+      <a class="btn btn-green" href="katalog.html">Открыть каталог</a>
+      <a class="btn btn-white" href="#" data-href="telegram">Спросить в Telegram</a>
     </div>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Витрина</p>
-      <h2>Что есть прямо сейчас</h2>
-      <p class="lead">Цены магазинные, без наценки за доставку. Чего нет в списке — спросите, привезём.</p>
+  <a class="promo" href="uslugi.html">
+    <span class="ico" data-ico="key"></span>
+    <h3>Ключи и пульты</h3>
+    <p>Дверные, сейфовые, домофонные и автомобильные. Пульты для шлагбаумов, ворот, сигнализаций, ТВ-приставок.</p>
+    <span class="go">Смотреть цены →</span>
+  </a>
+
+  <a class="promo" href="uslugi.html">
+    <span class="ico" data-ico="wrench"></span>
+    <h3>Ремонт</h3>
+    <p>Телефоны, ноутбуки, часы, наушники, колонки, фотоаппараты, мелкая техника и даже очки. Диагностика бесплатно.</p>
+    <span class="go">Что чиним →</span>
+  </a>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><h2>Категории</h2><a class="all" href="katalog.html">Весь каталог →</a></div>
+  <div class="cats" data-cats></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><h2>Витрина</h2><a class="all" href="katalog.html">Все товары →</a></div>
+  <div class="tabs" role="tablist" data-tabs></div>
+  <div class="goods" data-showcase></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="adv">
+    <div><b>Опт и розница</b><p>Работаем и с частными покупателями, и с теми, кто берёт партией.</p></div>
+    <div><b>Новая и Б/У техника</b><p>Проверенная, с гарантией магазина. Состояние честно указываем.</p></div>
+    <div><b>Скидка до 10%</b><p>Подписчикам нашего Telegram-канала на товары и услуги.</p></div>
+    <div><b>Без выходных</b><p>Работаем ежедневно с 10:00 до 20:00, прямо у метро Савёловская.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><h2>Бренды</h2></div>
+  <div class="brands" data-brands></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><h2>Услуги сервиса</h2><a class="all" href="uslugi.html">Все услуги →</a></div>
+  <div class="svc" data-services></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><h2>Отзывы</h2></div>
+  <div class="revs" data-reviews></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="seo">
+    <h2>Магазин и сервис Zustav PRO на Савёловской</h2>
+    <p>Zustav PRO — магазин техники и мастерская в ТЦ «Мобильный Павильон» на Сущёвском Валу, павильоны П72–П73, в двух шагах от метро Савёловская. У нас телефоны всех известных марок, ноутбуки, часы — кварцевые, механические, электронные и смарт, наушники и колонки JBL, Marshall и Яндекс, бытовые товары Xiaomi, аксессуары Baseus, MOMAX, Anker и WIWU, батарейки и аккумуляторы, запчасти, защитные стёкла, гидрогелевые плёнки и чехлы. Техника новая и Б/У, продаём в розницу и оптом.</p>
+    <p>Рядом с витриной работает мастерская. Чиним телефоны, ноутбуки и компьютеры, часы всех видов, наушники и колонки, фотоаппараты, мелкую бытовую технику и даже очки. Делаем компонентную пайку — меняем сгоревший элемент платы вместо того, чтобы отправлять вас за новым устройством. Диагностика бесплатная, цену называем до начала работ.</p>
+    <p>Отдельное направление — ключи и пульты: изготовление дверных, сейфовых, домофонных и автомобильных ключей, пульты для шлагбаумов, ворот, охранных сигнализаций, телевизоров и ТВ-приставок. Пока ждёте, можно поменять батарейку в часах или автобрелоке, наклеить плёнку или стекло и сделать ксерокопию.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap contact">
+  <div>
+    <h2 style="margin-bottom:14px">Как нас найти</h2>
+    <dl class="crow"><dt>Адрес</dt><dd data-org="address"></dd></dl>
+    <dl class="crow"><dt>Где именно</dt><dd data-org="place"></dd></dl>
+    <dl class="crow"><dt>Метро</dt><dd data-org="metro"></dd></dl>
+    <dl class="crow"><dt>Часы работы</dt><dd data-org="hours"></dd></dl>
+    <dl class="crow"><dt>Телефоны</dt><dd><a href="#" data-href="phone" data-org="phone1"></a> · <span data-org="phone2"></span></dd></dl>
+    <dl class="crow" style="border-bottom:0"><dt>Мессенджеры</dt><dd><a href="#" data-href="telegram">Telegram</a> · <a href="#" data-href="whatsapp">WhatsApp</a></dd></dl>
+    <div class="hero-acts">
+      <a class="btn btn-green" href="#" data-href="telegram">Написать в Telegram</a>
+      <a class="btn btn-ghost" href="#" data-href="phone">Позвонить</a>
     </div>
-    <div class="goods" data-catalog="8"></div>
-    <p style="margin-top:20px"><a class="btn" href="katalog.html">Весь каталог</a></p>
   </div>
-</section>
-
-<section style="padding-block:0">
-  <div class="why">
-    <div><b>Диагностика бесплатно</b><p>Цену узнаёте до начала работ, а не после. Если чинить невыгодно — скажем прямо и ничего не возьмём.</p></div>
-    <div><b>Гарантия <span data-site="warrantyMonths"></span> мес.</b><p>Письменно, с квитанцией. На работу и на установленную деталь.</p></div>
-    <div><b>Компонентный ремонт</b><p>Там, где меняют плату целиком, мы находим и меняем один элемент. Выходит в разы дешевле.</p></div>
-    <div><b>С <span data-site="since"></span> года</b><p>Большинство клиентов приходят по рекомендации знакомых. Это и есть наша реклама.</p></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Отзывы</p>
-      <h2>Нас чаще находят по рекомендации</h2>
-    </div>
-    <div class="revs" data-reviews></div>
-  </div>
-</section>
-
-<section style="border-top:1px solid var(--line)">
-  <div class="wrap contact">
-    <div class="cbox">
-      <div class="sec-head" style="margin-bottom:6px">
-        <p class="eyebrow">Адрес</p>
-        <h2>Как нас найти</h2>
-      </div>
-      <dl class="crow"><dt>Адрес</dt><dd data-site="address"></dd></dl>
-      <dl class="crow"><dt>Ориентир</dt><dd data-site="landmark"></dd></dl>
-      <dl class="crow"><dt>Часы</dt><dd data-site="hours"></dd></dl>
-      <dl class="crow"><dt>Телефон</dt><dd><a href="#" data-href="phone" data-site="phone"></a></dd></dl>
-      <dl class="crow" style="border-bottom:0"><dt>Telegram</dt><dd><a href="#" data-href="telegram" data-site="telegram"></a></dd></dl>
-    </div>
-    <div class="map">Сюда вставляется карта Яндекса — конструктор карт даёт готовый код вставки</div>
-  </div>
-</section>
+  <div class="map">Сюда вставляется карта Яндекса — конструктор карт даёт готовый код вставки</div>
+</div></section>
 
 </main>
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <h4>Зустов Про</h4>
-        <p style="font-size:15px;color:var(--ink-2);max-width:42ch">Ремонт телефонов, электроники и часов. Товар со своего склада и складов партнёров — привезём то, чего нет на полке.</p>
-      </div>
-      <div>
-        <h4>Услуги</h4>
-        <ul>
-          <li><a href="remont-telefonov.html">Ремонт телефонов</a></li>
-          <li><a href="elektronika.html">Электроника и пайка</a></li>
-          <li><a href="chasy.html">Часы и батарейки</a></li>
-          <li><a href="katalog.html">Каталог товаров</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Связь</h4>
-        <ul>
-          <li><a href="#" data-href="phone" data-site="phone"></a></li>
-          <li><a href="#" data-href="telegram" data-site="telegram"></a></li>
-          <li><span data-site="address" style="font-size:15px;color:var(--ink-2)"></span></li>
-          <li><span data-site="hours" style="font-size:15px;color:var(--ink-2)"></span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="foot-small">Цены на сайте справочные и не являются публичной офертой. Точная стоимость ремонта — после бесплатной диагностики.</p>
-  </div>
-</footer>
 
-<nav class="dock" aria-label="Быстрая связь">
-  <a href="#" data-href="phone">Позвонить</a>
-  <a class="main" href="#" data-href="telegram">Написать в Telegram</a>
+<footer class="footer"><div class="wrap">
+  <div class="cols">
+    <div>
+      <span class="logo" style="color:#fff"><span class="z">Zustav</span><span class="p">Pro</span></span>
+      <p style="margin-top:14px;font-size:14.5px;max-width:36ch">Продажа и сервис: телефоны, ноутбуки, часы, наушники, колонки, аксессуары. Изготовление ключей и пультов. Ремонт почти всего, что ломается.</p>
+      <p style="margin-top:12px;font-size:14.5px;color:#F0A867">Подписчикам Telegram — скидка до 10%</p>
+      <p style="margin-top:6px;font-size:14.5px">Опт и розница · Новая и Б/У техника</p>
+    </div>
+    <div>
+      <h4>Каталог</h4>
+      <ul>
+        <li><a href="katalog.html#phones">Телефоны</a></li>
+        <li><a href="katalog.html#laptops">Ноутбуки и ПК</a></li>
+        <li><a href="katalog.html#watches">Часы</a></li>
+        <li><a href="katalog.html#buds">Наушники</a></li>
+        <li><a href="katalog.html#audio">Колонки и аудио</a></li>
+        <li><a href="katalog.html#acc">Аксессуары</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Услуги</h4>
+      <ul>
+        <li><a href="uslugi.html">Ремонт техники</a></li>
+        <li><a href="uslugi.html">Ключи и пульты</a></li>
+        <li><a href="uslugi.html">Замена батареек</a></li>
+        <li><a href="uslugi.html">Плёнка и стёкла</a></li>
+        <li><a href="uslugi.html">Ксерокопия</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li data-org="address"></li>
+        <li data-org="place"></li>
+        <li data-org="metro"></li>
+        <li data-org="hours"></li>
+        <li><a href="#" data-href="phone" data-org="phone1"></a></li>
+        <li><a href="tel:+79169958455" data-org="phone2"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="small">
+    <span>© 2026 Zustav PRO</span>
+    <span>Цены на сайте справочные и не являются публичной офертой</span>
+  </div>
+</div></footer>
+
+<nav class="dock" aria-label="Быстрые действия">
+  <a href="katalog.html"><span data-ico="search"></span>Каталог</a>
+  <a href="#" data-href="phone"><span data-ico="call"></span>Позвонить</a>
+  <a class="main" href="#" data-href="telegram"><span data-ico="chat"></span>Telegram</a>
 </nav>
 
-<script src="data/content.js"></script>
-<script src="assets/app.js"></script>
+<script src="data/shop.js"></script>
+<script src="assets/shop.js"></script>
 </body>
 </html>
