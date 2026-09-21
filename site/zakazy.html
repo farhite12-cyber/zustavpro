@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Услуги: ремонт, ключи, пульты — Zustav PRO</title>
-<meta name="description" content="Ремонт телефонов, ноутбуков, часов, наушников, фотоаппаратов и очков. Изготовление ключей и пультов. Замена батареек, плёнка, стёкла, ксерокопия.">
-<meta property="og:title" content="Услуги: ремонт, ключи, пульты — Zustav PRO">
-<meta property="og:description" content="Ремонт телефонов, ноутбуков, часов, наушников, фотоаппаратов и очков. Изготовление ключей и пультов. Замена батареек, плёнка, стёкла, ксерокопия.">
+<title>Мои заказы — Zustav PRO</title>
+<meta name="description" content="История ваших заказов в Zustav PRO и их статус.">
+<meta property="og:title" content="Мои заказы — Zustav PRO">
+<meta property="og:description" content="История ваших заказов в Zustav PRO и их статус.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,34 +43,13 @@
 <nav class="catbar" aria-label="Категории"><div class="wrap"><ul data-catbar></ul></div></nav>
 
 <main>
-
-<section style="padding-block:22px 6px"><div class="wrap">
-  <h1>Услуги</h1>
-  <p style="margin-top:12px;max-width:64ch;color:var(--ink-2)">Мастерская работает там же, где магазин, — в ТЦ «Мобильный Павильон» у Савёловской. Диагностика бесплатная, цену называем до начала работ и по ходу не меняем.</p>
+<section style="padding-block:22px 10px"><div class="wrap">
+  <h1>Мои заказы</h1>
+  <p style="margin-top:10px;color:var(--ink-2);max-width:62ch">Здесь видно, что вы заказывали и на каком этапе заказ. Статус меняет менеджер после подтверждения наличия.</p>
+  <div id="newBox"></div>
 </div></section>
 
-<section style="padding-top:18px"><div class="wrap">
-  <div class="svc" data-services></div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="adv">
-    <div><b>Диагностика бесплатно</b><p>Цену узнаёте заранее. Если чинить невыгодно — скажем прямо.</p></div>
-    <div><b>Гарантия письменно</b><p>С квитанцией, на работу и на установленную деталь.</p></div>
-    <div><b>Компонентная пайка</b><p>Меняем элемент платы, а не узел целиком. Выходит в разы дешевле.</p></div>
-    <div><b>Пока ждёте</b><p>Батарейка, плёнка, стекло, ксерокопия — делается при вас за минуты.</p></div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="seo">
-    <h2>Берёмся за то, от чего отказались другие</h2>
-    <p>Компонентный ремонт — это работа на уровне платы. В большинстве сервисов неисправную плату меняют целиком: быстро и дорого. Мы ищем конкретную деталь — контроллер питания, транзистор, оборванную дорожку — и меняем её под микроскопом. Плата остаётся родной, данные на месте, а цена в разы ниже.</p>
-    <p>Если восстановлению устройство не подлежит, скажем сразу и денег за диагностику не возьмём. А если ремонт выходит дороже половины стоимости нового — честно предложим замену из каталога.</p>
-    <div class="hero-acts"><a class="btn btn-green" href="#" data-href="telegram">Описать проблему</a><a class="btn btn-ghost" href="#" data-href="phone">Позвонить</a></div>
-  </div>
-</div></section>
-
+<section style="padding-top:12px"><div class="wrap"><div class="orders" id="list"></div></div></section>
 </main>
 
 <footer class="footer"><div class="wrap">
@@ -131,5 +110,35 @@
 <script src="assets/shop.js"></script>
 <script src="assets/store.js"></script>
 <script src="assets/cart.js"></script>
+
+<script>
+(function(){
+  var S = window.ZP_STORE, ST = window.ZP_STATUS, money = window.ZP_MONEY;
+  var justNew = new URLSearchParams(location.search).get("new");
+  if(justNew){
+    document.getElementById("newBox").innerHTML =
+      '<div class="warnbox" style="background:var(--green-soft);border-color:var(--green);margin-top:18px">' +
+      '<b style="color:var(--green)">Заказ ' + justNew + ' создан</b>' +
+      '<p>Мы увидим его, когда вы отправите сообщение в Telegram. Если окно не открылось — напишите нам, номер заказа уже есть.</p></div>';
+  }
+  function row(o){
+    var s = ST[o.status] || ST["new"];
+    return '<article class="order">' +
+      '<div class="order-head"><span class="order-id">' + o.id + '</span>' +
+      '<span class="st st-' + s.tone + '">' + s.title + '</span>' +
+      '<span class="order-date">' + new Date(o.created).toLocaleString("ru-RU",{day:"2-digit",month:"long",hour:"2-digit",minute:"2-digit"}) + '</span></div>' +
+      '<ul class="order-items">' + o.items.map(function(i){
+        return '<li><span>' + i.title + ' × ' + i.qty + '</span><b>' + money(i.qty*window.ZP_NUM(i.price)) + ' ₽</b></li>';
+      }).join("") + '</ul>' +
+      '<div class="order-foot"><span class="order-total">' + money(o.total) + ' ₽</span>' +
+      '<span style="font-size:14px;color:var(--muted)">' + (o.delivery==="delivery" ? "Доставка" : "Самовывоз, П72–П73") + '</span></div>' +
+      '</article>';
+  }
+  var all = S.listOrders();
+  document.getElementById("list").innerHTML = all.length ? all.map(row).join("") :
+    '<div class="empty"><h2>Заказов пока нет</h2><p>Соберите корзину — заказ появится здесь вместе со статусом.</p>' +
+    '<a class="btn btn-green" href="katalog.html">В каталог</a></div>';
+})();
+</script>
 </body>
 </html>

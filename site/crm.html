@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Панель менеджера — Zustav PRO</title>
+<meta name="description" content="Внутренняя панель: заказы, статусы, клиенты.">
+<meta property="og:title" content="Панель менеджера — Zustav PRO">
+<meta property="og:description" content="Внутренняя панель: заказы, статусы, клиенты.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/shop.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span><span data-org="place"></span> · <span data-org="metro"></span></span>
+  <span class="sep">
+    <span data-org="hours"></span>
+    <a href="#" data-href="telegram">Telegram</a>
+    <a href="#" data-href="whatsapp">WhatsApp</a>
+    <b><a href="#" data-href="phone" data-org="phone1"></a></b>
+  </span>
+</div></div>
+
+<header class="header"><div class="wrap">
+  <div style="display:flex;align-items:center;min-width:0">
+    <a class="logo" href="index.html"><span class="z">Zustav</span><span class="p">Pro</span></a>
+    <span class="logo-sub">Тут есть Всё!</span>
+  </div>
+  <form class="hd-search" data-headsearch role="search">
+    <input type="search" name="q" placeholder="Поиск: телефон, наушники, ремешок, ключ…" aria-label="Поиск по каталогу">
+    <button type="submit" aria-label="Найти" data-ico="search"></button>
+  </form>
+  <div class="hd-cta">
+    <a class="hd-phone" href="#" data-href="phone"><span data-org="phone1"></span><span>ежедневно 10:00–20:00</span></a>
+    <a class="btn btn-green btn-sm" href="#" data-href="telegram">Написать</a>
+  </div>
+</div></header>
+
+<nav class="catbar" aria-label="Категории"><div class="wrap"><ul data-catbar></ul></div></nav>
+
+<main>
+<div class="crm-top"><div class="wrap">
+  <h1>Панель менеджера</h1>
+  <span class="who">Заказы, статусы, клиенты</span>
+</div></div>
+
+<section style="padding-block:22px"><div class="wrap">
+
+  <div class="warnbox">
+    <b>Это прототип интерфейса, а не рабочая система</b>
+    <p>Заказы сейчас хранятся в браузере того устройства, где их создали. Значит: вы видите здесь только заказы, оформленные на <em>этом же</em> компьютере, а клиент не увидит смену статуса, которую вы здесь поставите. Чтобы менеджеры и клиенты работали с одними данными, нужна база на сервере и вход по логину — без неё эта страница ещё и открыта любому, кто знает адрес. Что именно подключать — в сообщении ниже.</p>
+  </div>
+
+  <div class="tiles" id="tiles"></div>
+  <div class="crm-bar" id="bar"></div>
+
+  <div class="crm-cols">
+    <div class="orders" id="list"></div>
+    <div class="clients" id="clients"></div>
+  </div>
+
+  <p style="margin-top:22px"><button class="btn btn-ghost btn-sm" type="button" id="demo">Создать демо-заказы для просмотра</button></p>
+
+</div></section>
+</main>
+
+<footer class="footer"><div class="wrap">
+  <div class="cols">
+    <div>
+      <span class="logo" style="color:#fff"><span class="z">Zustav</span><span class="p">Pro</span></span>
+      <p style="margin-top:14px;font-size:14.5px;max-width:36ch">Продажа и сервис: телефоны, ноутбуки, часы, наушники, колонки, аксессуары. Изготовление ключей и пультов. Ремонт почти всего, что ломается.</p>
+      <p style="margin-top:12px;font-size:14.5px;color:#F0A867">Подписчикам Telegram — скидка до 10%</p>
+      <p style="margin-top:6px;font-size:14.5px">Опт и розница · Новая и Б/У техника</p>
+    </div>
+    <div>
+      <h4>Каталог</h4>
+      <ul>
+        <li><a href="katalog.html#phones">Телефоны</a></li>
+        <li><a href="katalog.html#laptops">Ноутбуки и ПК</a></li>
+        <li><a href="katalog.html#watches">Часы</a></li>
+        <li><a href="katalog.html#buds">Наушники</a></li>
+        <li><a href="katalog.html#audio">Колонки и аудио</a></li>
+        <li><a href="katalog.html#acc">Аксессуары</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Услуги</h4>
+      <ul>
+        <li><a href="uslugi.html">Ремонт техники</a></li>
+        <li><a href="uslugi.html">Ключи и пульты</a></li>
+        <li><a href="uslugi.html">Замена батареек</a></li>
+        <li><a href="uslugi.html">Плёнка и стёкла</a></li>
+        <li><a href="uslugi.html">Ксерокопия</a></li>
+        <li><a href="zakazy.html">Мои заказы</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li data-org="address"></li>
+        <li data-org="place"></li>
+        <li data-org="metro"></li>
+        <li data-org="hours"></li>
+        <li><a href="#" data-href="phone" data-org="phone1"></a></li>
+        <li><a href="tel:+79169958455" data-org="phone2"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="small">
+    <span>© 2026 Zustav PRO</span>
+    <span>Цены на сайте справочные и не являются публичной офертой</span>
+  </div>
+</div></footer>
+
+<nav class="dock" aria-label="Быстрые действия">
+  <a href="katalog.html"><span data-ico="search"></span>Каталог</a>
+  <a href="#" data-href="phone"><span data-ico="call"></span>Позвонить</a>
+  <a class="main" href="#" data-href="telegram"><span data-ico="chat"></span>Telegram</a>
+</nav>
+
+<script src="data/shop.js"></script>
+<script src="assets/shop.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/cart.js"></script>
+
+<script>
+(function(){
+  var S = window.ZP_STORE, ST = window.ZP_STATUS, money = window.ZP_MONEY, num = window.ZP_NUM;
+  var filter = "all";
+
+  function tiles(all){
+    var today = new Date().toDateString();
+    var t = {
+      today: all.filter(function(o){ return new Date(o.created).toDateString()===today; }).length,
+      work:  all.filter(function(o){ return o.status==="new"||o.status==="confirmed"; }).length,
+      ready: all.filter(function(o){ return o.status==="ready"; }).length,
+      sum:   all.filter(function(o){ return o.status!=="cancelled"; }).reduce(function(s,o){ return s+o.total; },0)
+    };
+    document.getElementById("tiles").innerHTML =
+      '<div class="tile"><b>'+t.today+'</b><span>заказов сегодня</span></div>' +
+      '<div class="tile"><b>'+t.work+'</b><span>в работе</span></div>' +
+      '<div class="tile"><b>'+t.ready+'</b><span>готовы к выдаче</span></div>' +
+      '<div class="tile accent"><b>'+money(t.sum)+' ₽</b><span>на сумму, без отменённых</span></div>';
+  }
+
+  function bar(){
+    var opts = [["all","Все"]].concat(Object.keys(ST).map(function(k){ return [k, ST[k].title]; }));
+    document.getElementById("bar").innerHTML = opts.map(function(o){
+      return '<button class="tab" type="button" data-f="'+o[0]+'" aria-selected="'+(o[0]===filter)+'">'+o[1]+'</button>';
+    }).join("");
+    document.getElementById("bar").querySelectorAll("[data-f]").forEach(function(b){
+      b.onclick = function(){ filter = b.getAttribute("data-f"); draw(); };
+    });
+  }
+
+  function order(o){
+    var s = ST[o.status] || ST["new"];
+    var nextBtn = s.next ? '<button class="btn btn-green btn-sm" type="button" data-next="'+o.id+'">'+ST[s.next].title+'</button>' : "";
+    var cancel = (o.status!=="cancelled" && o.status!=="done")
+      ? '<button class="btn btn-ghost btn-sm" type="button" data-cancel="'+o.id+'">Отменить</button>' : "";
+    return '<article class="order">' +
+      '<div class="order-head"><span class="order-id">'+o.id+'</span>' +
+      '<span class="st st-'+s.tone+'">'+s.title+'</span>' +
+      '<span class="order-date">'+new Date(o.created).toLocaleString("ru-RU",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"})+'</span></div>' +
+      '<div class="order-cli"><b>'+(o.client.name||"без имени")+'</b> · '+(o.client.phone||"—")+' · ' +
+      (o.delivery==="delivery" ? ("доставка: "+(o.address||"адрес не указан")) : "самовывоз")+'</div>' +
+      (o.comment ? '<div class="order-cli" style="color:var(--muted)">Комментарий: '+o.comment+'</div>' : "") +
+      '<ul class="order-items" style="margin-top:10px">' + o.items.map(function(i){
+        return '<li><span>'+i.title+' × '+i.qty+' <span style="color:var(--muted)">('+i.art+')</span></span><b>'+money(i.qty*num(i.price))+' ₽</b></li>';
+      }).join("") + '</ul>' +
+      '<div class="order-foot"><span class="order-total">'+money(o.total)+' ₽</span>' +
+      '<span style="display:flex;gap:8px;flex-wrap:wrap">'+nextBtn+cancel+'</span></div></article>';
+  }
+
+  function clients(all){
+    var map = {};
+    all.forEach(function(o){
+      var k = o.client.phone || o.client.name || "—";
+      map[k] = map[k] || { name:o.client.name, phone:o.client.phone, n:0, sum:0, last:o.created };
+      map[k].n++; map[k].sum += o.total;
+      if(o.created > map[k].last) map[k].last = o.created;
+    });
+    var list = Object.keys(map).map(function(k){ return map[k]; })
+                 .sort(function(a,b){ return b.sum - a.sum; });
+    document.getElementById("clients").innerHTML = '<h3>Клиенты</h3>' + (list.length ? list.map(function(c){
+      return '<div class="client"><div><b>'+(c.name||"без имени")+'</b><br><span>'+(c.phone||"—")+' · заказов: '+c.n+'</span></div>' +
+             '<span class="sum">'+money(c.sum)+' ₽</span></div>';
+    }).join("") : '<div class="client"><span>Пока никого</span></div>');
+  }
+
+  function draw(){
+    var all = S.listOrders();
+    tiles(all); bar(); clients(all);
+    var shown = filter==="all" ? all : all.filter(function(o){ return o.status===filter; });
+    document.getElementById("list").innerHTML = shown.length
+      ? shown.map(order).join("")
+      : '<div class="empty" style="border-radius:0;border:0"><h2>Заказов нет</h2><p>В этом фильтре пусто.</p></div>';
+    document.getElementById("list").querySelectorAll("[data-next]").forEach(function(b){
+      b.onclick = function(){
+        var o = S.getOrder(b.getAttribute("data-next"));
+        S.setStatus(o.id, ST[o.status].next); draw();
+      };
+    });
+    document.getElementById("list").querySelectorAll("[data-cancel]").forEach(function(b){
+      b.onclick = function(){ S.setStatus(b.getAttribute("data-cancel"), "cancelled"); draw(); };
+    });
+  }
+
+  document.getElementById("demo").onclick = function(){
+    var P = (window.SHOP && window.SHOP.products) || [];
+    [["Андрей","+7 903 111-22-33"],["Марина","+7 916 444-55-66"],["Сергей","@sergey"]].forEach(function(c,n){
+      var items = P.slice(n*3, n*3+2).map(function(p){ return {art:p.art,title:p.title,price:p.price,qty:n===1?2:1}; });
+      if(!items.length) return;
+      S.createOrder({ client:{name:c[0],phone:c[1]}, delivery:n===2?"delivery":"pickup",
+        address:n===2?"Москва, Сущёвский Вал, 5":"", comment:n===0?"Нужен чёрный":"",
+        items:items, total:items.reduce(function(s,i){ return s + i.qty*num(i.price); },0) });
+    });
+    draw();
+  };
+
+  draw();
+})();
+</script>
+</body>
+</html>

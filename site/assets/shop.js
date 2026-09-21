@@ -30,7 +30,11 @@
     pin:'<path d="M12 22s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/>',
     chat:'<path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.1A8.5 8.5 0 1 1 21 12Z"/>',
     call:'<path d="M5 3h3.5l1.8 4.4-2.2 1.6a12 12 0 0 0 5.9 5.9l1.6-2.2L20 14.5V18a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 3 5.2 2 2 0 0 1 5 3Z"/>',
-    wrench:'<path d="M20 5.5a5.5 5.5 0 0 1-7.3 5.2L6 17.4a2.3 2.3 0 0 1-3.3-3.3l6.7-6.7A5.5 5.5 0 0 1 16 3.3l-3 3 1.6 3.1 3.1 1.6 3-3c.2.5.3 1 .3 1.5Z"/>'
+    wrench:'<path d="M20 5.5a5.5 5.5 0 0 1-7.3 5.2L6 17.4a2.3 2.3 0 0 1-3.3-3.3l6.7-6.7A5.5 5.5 0 0 1 16 3.3l-3 3 1.6 3.1 3.1 1.6 3-3c.2.5.3 1 .3 1.5Z"/>',
+    cart:'<path d="M3 4h2.2l2.3 11.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.6-1.3L20.5 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/>',
+    trash:'<path d="M4 6.5h16M9.5 6.5V4.8c0-.7.6-1.3 1.3-1.3h2.4c.7 0 1.3.6 1.3 1.3v1.7M6.5 6.5 7.6 20c0 .8.7 1.4 1.5 1.4h5.8c.8 0 1.5-.6 1.5-1.4L17.5 6.5"/>',
+    user:'<circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/>',
+    box:'<path d="M12 2.8 20.5 7v10L12 21.2 3.5 17V7Z"/><path d="M3.5 7 12 11.4 20.5 7M12 11.4V21"/>'
   };
   function ico(name, cls){
     var p = I[name] || I.parts;
@@ -93,9 +97,12 @@
       (p.brand ? '<span class="good-brand">' + esc(p.brand) + "</span>" : "") +
       "<h3>" + esc(p.title) + "</h3>" + price + stock +
       '<span class="good-art">Арт. ' + esc(p.art) + "</span>" +
-      '<a class="btn btn-green btn-sm btn-wide" href="' + tgHref +
-      "?text=" + encodeURIComponent("Здравствуйте! Интересует: " + plain(p.title) + " (арт. " + p.art + ")") +
-      '" target="_blank" rel="noopener">Узнать наличие</a></article>';
+      '<button class="btn btn-green btn-sm btn-wide" type="button" data-add="' + esc(p.art) +
+      '" data-title="' + esc(plain(p.title)) + '" data-price="' + esc(plain(p.price)) +
+      '">В корзину</button>' +
+      '<a class="good-ask" href="' + tgHref + "?text=" +
+      encodeURIComponent("Здравствуйте! Вопрос по товару: " + plain(p.title) + " (арт. " + p.art + ")") +
+      '" target="_blank" rel="noopener">Спросить о товаре</a></article>';
   }
 
   /* ---------- витрина с вкладками ---------- */
