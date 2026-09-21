@@ -79,10 +79,10 @@ p{margin:0}
   letter-spacing:-.02em;line-height:1;white-space:nowrap;color:inherit;
 }
 .logo .z{color:inherit}
-.logo .p{position:relative;padding:0 .36em;margin-right:.18em;color:inherit}
+.logo .p{position:relative;padding:0 .42em;margin-right:.22em;color:inherit}
 .logo .p::before{
-  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:2.05em;height:2.05em;border:.135em solid var(--green);border-radius:50%;pointer-events:none;
+  content:"";position:absolute;left:51.5%;top:50%;transform:translate(-50%,-50%);
+  width:2.16em;height:2.16em;border:.14em solid var(--green);border-radius:50%;pointer-events:none;
 }
 .logo-sub{
   display:none;margin-left:14px;font-family:var(--f-display);font-size:14px;
