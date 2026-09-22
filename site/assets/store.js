@@ -115,7 +115,7 @@
             items: o.items, total: o.total,
             history: [{ status: "new", at: now }]
           };
-          return db.from("orders").insert(row).then(function (r) {
+          return db.from("orders").insert(row, { returning: "minimal" }).then(function (r) {
             if (r.error) throw r.error;
             cart.mine({ id: id, phone: row.client_phone });
             return fromRow(Object.assign({ created_at: now }, row));

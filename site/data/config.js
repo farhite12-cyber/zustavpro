@@ -14,6 +14,6 @@
    ============================================================ */
 
 window.ZP_CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: ""
+  SUPABASE_URL: "https://jbfvmdcsnokqomapixkf.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_5PZUN-4hooc6H8Bbo6S5Gg_vVgb0x7o"
 };
